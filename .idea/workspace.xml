@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Maven/apache-maven-3.6.3" />
+        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1XQxvzNqAw3FDUzsSBWibhGdj5z" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+    <option name="showVisibilityIcons" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
+  </component>
+  <component name="RunManager">
+    <configuration name="WxProApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="Wechat_Pro" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cwd.WxProApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="" />
+      <created>1580992353701</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580992353701</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1580992452332">
+      <screen x="0" y="0" width="1549" height="840" />
+    </state>
+    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1580992452332" />
+    <state x="555" y="162" key="FileChooserDialogImpl" timestamp="1580992385582">
+      <screen x="0" y="0" width="1549" height="840" />
+    </state>
+    <state x="555" y="162" key="FileChooserDialogImpl/0.0.1549.840@0.0.1549.840" timestamp="1580992385582" />
+  </component>
+</project>
