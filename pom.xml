@@ -12,7 +12,6 @@
     <artifactId>wx_pro</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>wx_pro</name>
-    <description>wechat</description>
 
     <properties>
         <java.version>1.8</java.version>
