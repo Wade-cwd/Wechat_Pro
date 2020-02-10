@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LoginController/WxLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_10.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_1.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wechat_Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Wechat_Pro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/WxProApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/WxProApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
@@ -16,15 +19,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="mybatis" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -59,7 +67,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="terminal" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RunManager">
     <configuration name="WxProApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
@@ -94,7 +102,7 @@
       <updated>1580992353701</updated>
       <workItem from="1580992358737" duration="1578000" />
       <workItem from="1581086293455" duration="871000" />
-      <workItem from="1581314010748" duration="3758000" />
+      <workItem from="1581314010748" duration="10456000" />
     </task>
     <task id="LOCAL-00001" summary="commitTest">
       <created>1580992453065</created>
@@ -131,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581314691022</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="commitTest">
+      <created>1581318003708</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1581318003708</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,10 +161,10 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1549.840@0.0.1549.840" timestamp="1581314096861" />
-    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581314689373">
+    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581318002041">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581314689373" />
+    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581318002041" />
     <state x="555" y="162" key="FileChooserDialogImpl" timestamp="1580992385582">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -158,45 +173,53 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="646" y="312" width="261" height="217" key="Github.ShareDialog/0.0.1549.840@0.0.1549.840" timestamp="1580993025145" />
-    <state width="1506" height="216" key="GridCell.Tab.0.bottom" timestamp="1581317872468">
+    <state width="1506" height="366" key="GridCell.Tab.0.bottom" timestamp="1581322638721">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581317872468" />
-    <state width="1506" height="216" key="GridCell.Tab.0.center" timestamp="1581317872467">
+    <state width="1506" height="366" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
+    <state width="1506" height="366" key="GridCell.Tab.0.center" timestamp="1581322638720">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1581317872467" />
-    <state width="1506" height="216" key="GridCell.Tab.0.left" timestamp="1581317872467">
+    <state width="1506" height="366" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1581322638720" />
+    <state width="1506" height="366" key="GridCell.Tab.0.left" timestamp="1581322638720">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1581317872467" />
-    <state width="1506" height="216" key="GridCell.Tab.0.right" timestamp="1581317872467">
+    <state width="1506" height="366" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1581322638720" />
+    <state width="1506" height="366" key="GridCell.Tab.0.right" timestamp="1581322638720">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1581317872467" />
-    <state width="1506" height="216" key="GridCell.Tab.1.bottom" timestamp="1581317872468">
+    <state width="1506" height="366" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1581322638720" />
+    <state width="1506" height="366" key="GridCell.Tab.1.bottom" timestamp="1581322638721">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581317872468" />
-    <state width="1506" height="216" key="GridCell.Tab.1.center" timestamp="1581317872468">
+    <state width="1506" height="366" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
+    <state width="1506" height="366" key="GridCell.Tab.1.center" timestamp="1581322638721">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1581317872468" />
-    <state width="1506" height="216" key="GridCell.Tab.1.left" timestamp="1581317872468">
+    <state width="1506" height="366" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
+    <state width="1506" height="366" key="GridCell.Tab.1.left" timestamp="1581322638721">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1581317872468" />
-    <state width="1506" height="216" key="GridCell.Tab.1.right" timestamp="1581317872468">
+    <state width="1506" height="366" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
+    <state width="1506" height="366" key="GridCell.Tab.1.right" timestamp="1581322638721">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="216" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1581317872468" />
-    <state x="284" y="63" key="SettingsEditor" timestamp="1581315471485">
+    <state width="1506" height="366" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
+    <state x="382" y="83" key="Registry" timestamp="1581318143332">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="284" y="63" key="SettingsEditor/0.0.1549.840@0.0.1549.840" timestamp="1581315471485" />
+    <state x="382" y="83" key="Registry/0.0.1549.840@0.0.1549.840" timestamp="1581318143332" />
+    <state x="284" y="63" key="SettingsEditor" timestamp="1581318185827">
+      <screen x="0" y="0" width="1549" height="840" />
+    </state>
+    <state x="284" y="63" key="SettingsEditor/0.0.1549.840@0.0.1549.840" timestamp="1581318185827" />
     <state x="367" y="143" key="Vcs.Push.Dialog.v2" timestamp="1581314703539">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="367" y="143" key="Vcs.Push.Dialog.v2/0.0.1549.840@0.0.1549.840" timestamp="1581314703539" />
+    <state x="579" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581318621241">
+      <screen x="0" y="0" width="1549" height="840" />
+    </state>
+    <state x="579" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1549.840@0.0.1549.840" timestamp="1581318621241" />
   </component>
 </project>

@@ -1,0 +1,20 @@
+###################################################################################
+#                                                                                 #
+#                                   druid数据源                                   #
+#                                                                                 #
+###################################################################################
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: cwd1995224920
+    url: jdbc:mysql://localhost:3306/user?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#服务器配置
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: utf-8
+#mybatis配置
+mybatis:
+  type-aliases-package: com.cwd.Entity
