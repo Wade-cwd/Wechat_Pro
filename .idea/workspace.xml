@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_5_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_2_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_autoconfigure_2_1_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_spring_boot_mybatis_spring_boot_starter_2_1_1.xml" beforeDir="false" />
+    <list default="true" id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="更新mybatis逆向工程">
+      <change afterPath="$PROJECT_DIR$/src/com/cwd/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/mybatis/utils/GeneratorDisplay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wechat_Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Wechat_Pro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/WxProApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/WxProApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/generatorConfig.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="mybatis" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -58,6 +54,7 @@
     <option name="showVisibilityIcons" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -69,7 +66,20 @@
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.GeneratorDisplay">
+    <configuration name="GeneratorDisplay" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cwd.mybatis.utils.GeneratorDisplay" />
+      <module name="Wechat_Pro" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cwd.mybatis.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WxProApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="Wechat_Pro" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.cwd.WxProApplication" />
@@ -77,6 +87,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.GeneratorDisplay" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -102,7 +117,7 @@
       <updated>1580992353701</updated>
       <workItem from="1580992358737" duration="1578000" />
       <workItem from="1581086293455" duration="871000" />
-      <workItem from="1581314010748" duration="10456000" />
+      <workItem from="1581314010748" duration="11819000" />
     </task>
     <task id="LOCAL-00001" summary="commitTest">
       <created>1580992453065</created>
@@ -146,25 +161,34 @@
       <option name="project" value="LOCAL" />
       <updated>1581318003708</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commitTest">
+      <created>1581326296721</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1581326296721</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="commitTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="commitTest" />
+    <MESSAGE value="更新mybatis逆向工程" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新mybatis逆向工程" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581314096861">
+    <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581327613305">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1549.840@0.0.1549.840" timestamp="1581314096861" />
-    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581318002041">
+    <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1549.840@0.0.1549.840" timestamp="1581327613305" />
+    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581327715391">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581318002041" />
+    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581327715391" />
     <state x="555" y="162" key="FileChooserDialogImpl" timestamp="1580992385582">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -173,38 +197,42 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="646" y="312" width="261" height="217" key="Github.ShareDialog/0.0.1549.840@0.0.1549.840" timestamp="1580993025145" />
-    <state width="1506" height="366" key="GridCell.Tab.0.bottom" timestamp="1581322638721">
+    <state width="1506" height="162" key="GridCell.Tab.0.bottom" timestamp="1581327736844">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
-    <state width="1506" height="366" key="GridCell.Tab.0.center" timestamp="1581322638720">
+    <state width="1506" height="162" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581327736844" />
+    <state width="1506" height="162" key="GridCell.Tab.0.center" timestamp="1581327736844">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1581322638720" />
-    <state width="1506" height="366" key="GridCell.Tab.0.left" timestamp="1581322638720">
+    <state width="1506" height="162" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1581327736844" />
+    <state width="1506" height="162" key="GridCell.Tab.0.left" timestamp="1581327736844">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1581322638720" />
-    <state width="1506" height="366" key="GridCell.Tab.0.right" timestamp="1581322638720">
+    <state width="1506" height="162" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1581327736844" />
+    <state width="1506" height="162" key="GridCell.Tab.0.right" timestamp="1581327736844">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1581322638720" />
-    <state width="1506" height="366" key="GridCell.Tab.1.bottom" timestamp="1581322638721">
+    <state width="1506" height="162" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1581327736844" />
+    <state width="1506" height="125" key="GridCell.Tab.1.bottom" timestamp="1581326788607">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
-    <state width="1506" height="366" key="GridCell.Tab.1.center" timestamp="1581322638721">
+    <state width="1506" height="125" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581326788607" />
+    <state width="1506" height="125" key="GridCell.Tab.1.center" timestamp="1581326788607">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
-    <state width="1506" height="366" key="GridCell.Tab.1.left" timestamp="1581322638721">
+    <state width="1506" height="125" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1581326788607" />
+    <state width="1506" height="125" key="GridCell.Tab.1.left" timestamp="1581326788607">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
-    <state width="1506" height="366" key="GridCell.Tab.1.right" timestamp="1581322638721">
+    <state width="1506" height="125" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1581326788607" />
+    <state width="1506" height="125" key="GridCell.Tab.1.right" timestamp="1581326788607">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="366" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1581322638721" />
+    <state width="1506" height="125" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1581326788607" />
+    <state x="305" y="76" key="Maven.ArtifactSearchDialog" timestamp="1581326677460">
+      <screen x="0" y="0" width="1549" height="840" />
+    </state>
+    <state x="305" y="76" key="Maven.ArtifactSearchDialog/0.0.1549.840@0.0.1549.840" timestamp="1581326677460" />
     <state x="382" y="83" key="Registry" timestamp="1581318143332">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -213,10 +241,10 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="284" y="63" key="SettingsEditor/0.0.1549.840@0.0.1549.840" timestamp="1581318185827" />
-    <state x="367" y="143" key="Vcs.Push.Dialog.v2" timestamp="1581314703539">
+    <state x="367" y="143" key="Vcs.Push.Dialog.v2" timestamp="1581327731758">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="367" y="143" key="Vcs.Push.Dialog.v2/0.0.1549.840@0.0.1549.840" timestamp="1581314703539" />
+    <state x="367" y="143" key="Vcs.Push.Dialog.v2/0.0.1549.840@0.0.1549.840" timestamp="1581327731758" />
     <state x="579" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581318621241">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
