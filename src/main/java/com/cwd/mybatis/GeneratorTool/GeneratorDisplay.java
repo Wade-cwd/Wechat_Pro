@@ -1,4 +1,4 @@
-package com.cwd.mybatis.utils;
+package com.cwd.mybatis.GeneratorTool;
 
 
 import org.mybatis.generator.api.MyBatisGenerator;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 //mybatis逆向工程启动类
 public class GeneratorDisplay{
-    public void testGenerator() throws Exception {
+    public void generator() throws Exception {
         List<String> warnings = new ArrayList<>();
         boolean overwrite = true;
         //指定逆向工程配置文件
@@ -22,9 +22,9 @@ public class GeneratorDisplay{
         MyBatisGenerator myBatisGenerator = new MyBatisGenerator(config,callback,warnings);
         myBatisGenerator.generate(null);
     }
-//运行这里生成
+
     public static void main(String[] args) throws Exception {
         GeneratorDisplay generator = new GeneratorDisplay();
-        generator.testGenerator();
+        generator.generator();
     }
 }
