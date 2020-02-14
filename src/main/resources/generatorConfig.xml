@@ -34,7 +34,7 @@
 <!--            <property name="enableSubPackages" value="false"/>-->
         </sqlMapGenerator>
         <!-- targetPackage：mapper接口生成的位置，重要！！ -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.cwd.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.cwd.Mapper" targetProject="src/main/java">
 <!--            <property name="enableSubPackages" value="false"/>-->
         </javaClientGenerator>
         <!-- 指定数据库表，要生成哪些表，就写哪些表，要和数据库中对应，不能写错！ -->

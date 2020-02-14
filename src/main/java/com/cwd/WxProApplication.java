@@ -8,7 +8,7 @@ import tk.mybatis.spring.annotation.MapperScan;
 
 
 
-@MapperScan(basePackages = "com.cwd.mapper")
+@MapperScan(basePackages = "com.cwd.Mapper")//扫描mapper接口
 @SpringBootApplication
 public class WxProApplication {
 
