@@ -11,7 +11,6 @@ import tk.mybatis.spring.annotation.MapperScan;
 @MapperScan(basePackages = "com.cwd.Mapper")//扫描mapper接口
 @SpringBootApplication
 public class WxProApplication {
-
     public static void main(String[] args) {
         SpringApplication.run(WxProApplication.class, args);
     }

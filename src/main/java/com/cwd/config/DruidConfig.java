@@ -45,7 +45,6 @@ public class DruidConfig {
         Map<String,String> initParams=new HashMap<>();
         initParams.put("exclusions","*.js,*.css,/druid/*");
         bean.setInitParameters(initParams);
-        bean.addUrlPatterns(String.valueOf(Arrays.asList("/*")));
         return  bean;
     }
 }

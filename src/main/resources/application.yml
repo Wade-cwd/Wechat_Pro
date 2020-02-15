@@ -35,24 +35,23 @@ spring:
     # 通过connectProperties属性来打开mergeSql功能；慢SQL记录
     connect-properties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
   #JPA配置
-  jpa:
-    hibernate:
-      #更新或者创建数据表(数据库没有表时自动创建)
-      ddl-auto: update
+#  jpa:
+#    hibernate:
+      #更新或者 创建数据表(数据库没有表时自动创建)
+#      ddl-auto: update
     #控制台显示sql
-    show-sql: true
+#    show-sql: true
 
 #服务器配置
 server:
   port: 8080
-  tomcat:
-    uri-encoding: utf-8
+
 #mybatis配置
 mybatis:
   type-aliases-package: com.cwd.Entity
   mapper-locations: classpath:mybatis/mapper/*.xml
-  config-location: classpath:mybatis/mapper/mybatis-config.xml
+  config-location: classpath:mybatis/mybatis-config.xml
 
 #debug模式
-debug: false
+debug: true
 
