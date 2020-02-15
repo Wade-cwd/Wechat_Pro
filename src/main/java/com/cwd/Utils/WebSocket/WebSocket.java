@@ -7,7 +7,7 @@ import javax.websocket.Session;
 import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
-//websocket网络请求
+//websocket网络请求，用于长连接需求
 public class WebSocket {
 
         //静态变量，用来记录当前在线连接数。应该把它设计成线程安全的。
