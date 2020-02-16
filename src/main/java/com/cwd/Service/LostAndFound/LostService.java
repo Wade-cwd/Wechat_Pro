@@ -13,9 +13,16 @@ import java.util.List;
 public class LostService {
     @Autowired
     private LostMapper lostMapper;
+
+
+
+    //处理失物招领列表业务
     public List<Lost> getLostList(){
-//        List<Lost> losts=lostMapper.getLostList();
-//        System.out.println("哈哈哈"+losts.get(0).toString());
         return lostMapper.getLostList();
     }
+    //添加一条失物招领列表业务
+    public void addLostItem(Lost lost){
+        lostMapper.addLostItem(lost);
+    }
+
 }

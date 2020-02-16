@@ -8,6 +8,16 @@ import java.io.Serializable;
 import java.sql.Date;
 
 public class Lost implements Serializable {
+    private  int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String uid;
     @NotBlank
     private String article;//物品名称

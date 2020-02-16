@@ -7,7 +7,21 @@ import javax.validation.constraints.Past;
 import java.io.Serializable;
 import java.sql.Date;
 
+/*
+* 失物拾取实体
+* */
 public class Found implements Serializable {
+
+    private  int id;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     private String uid;
     @NotBlank
     private String article;//物品名称

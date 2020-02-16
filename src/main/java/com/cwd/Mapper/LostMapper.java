@@ -10,4 +10,6 @@ import java.util.List;
 public interface LostMapper {
     @Autowired
     List<Lost> getLostList();//获取失物招领列表
+    @Autowired
+    void addLostItem(Lost lost);//添加一条失物招领记录
 }
