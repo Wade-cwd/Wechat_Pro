@@ -3,7 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cwd.Mapper.FoundMapper">
-<!--    <select id="selectBlog" resultType="Blog">-->
-<!--        select * from Blog where id = #{id}-->
+<!--    <select id="getLostList" resultType="com.cwd.Entity.Lost">-->
+<!--        select * from Lost-->
 <!--    </select>-->
+    <insert id="addLostItem" parameterType="com.cwd.Entity.Lost">
+        --         自增主键
+        <selectKey keyProperty="id" order="BEFORE"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert  into found(article,feature,foundplace,phone,image,mark)
+        values(#{article},#{feature},#{foundplace},#{phone},#{image},#{mark})
+    </insert>
 </mapper>

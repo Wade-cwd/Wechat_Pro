@@ -1,17 +1,24 @@
 package com.cwd.Controller.LostController;
 
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.cwd.Entity.Lost;
 import com.cwd.Service.LostAndFound.LostService;
+import com.cwd.Utils.JsonToEntityUtil;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.InvocationTargetException;
+import java.text.ParseException;
 import java.util.List;
 
 @RestController
@@ -32,19 +39,18 @@ public class LostController {
         return  lostService.getLostList();
     }
     /*
-    * 拿到前端上传的数据文件
+    * 获取前端数据文件
     * */
-    @PostMapping("/submitForm")
-    public  void submitForm(@RequestBody Lost lost){
-        logger.info("正在获取数据..."+JSONObject.toJSONString(lost));
+    @PostMapping(value = "/submitForm",consumes ={"multipart/form-data","application/json"} )
+    public void submitForm(HttpServletRequest request ,@RequestParam("file") MultipartFile images) throws IOException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, ParseException {
+        String formData=request.getParameter("form_data");
+        //表单数据
+        Lost lost= lostService.jsonToLost(formData);
+        logger.info(lost.toString());
+        //文件写入文件夹
+        String imgName= lostService.writeFileToDirectory(images);
+        //写入数据库
+        lost.setImage(imgName);
+        logger.info("图片"+lost.getImage());
         lostService.addLostItem(lost);
-        logger.info("添加一条失物招领成功>>>");
-    }
-    /*
-    * 上传的本地资源
-    * */
-    @PostMapping("/uploadFile")
-    public void uploadFile(){
-        logger.info("正在获取文件...");
-    }
-}
+    }}

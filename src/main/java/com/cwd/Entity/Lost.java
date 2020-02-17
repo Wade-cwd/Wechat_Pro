@@ -1,14 +1,17 @@
 package com.cwd.Entity;
 
 
+import org.springframework.stereotype.Component;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.io.Serializable;
 import java.sql.Date;
 
+@Component
 public class Lost implements Serializable {
-    private  int id;
+    private  Integer id=0;
 
     public int getId() {
         return id;
@@ -18,20 +21,20 @@ public class Lost implements Serializable {
         this.id = id;
     }
 
-    private String uid;
+    private String uid="";
     @NotBlank
-    private String article;//物品名称
+    private String article="";//物品名称
     @NotBlank
-    private String feature;//物品特征描述
+    private String feature="";//物品特征描述
     @Past
-    private Date lostdate;//拾取日期
+    private Date lostdate= new Date(System.currentTimeMillis());//拾取日期
     @NotBlank
-    private String lostplace;//拾取地点
+    private String lostplace="";//拾取地点
     @NotBlank
-    private String phone;//电话号码
-    private String mark;//备注
-    private String image;//图片
-    private Date issuedate;//发布日期
+    private String phone="";//电话号码
+    private String mark="";//备注
+    private String image="";//图片
+    private Date issuedate=new Date(System.currentTimeMillis());//发布日期
     @Override
     public String toString() {
         return "Lost{" +

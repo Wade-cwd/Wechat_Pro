@@ -1,10 +1,17 @@
 ###################################################################################
-#                                                                                 #
-#                                   配置文件                                 #
-#                                                                                 #
+#
+#                                   配置文件
+#
 ###################################################################################
 #druid数据源
 spring:
+  #json日期格式化,转换前端json的日期
+  jackson:
+    #字符串格式
+    date-format: yyyy-MM-dd
+    #时区设置
+    time-zone: GMT+8
+  #数据源配置
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
@@ -41,17 +48,21 @@ spring:
 #      ddl-auto: update
     #控制台显示sql
 #    show-sql: true
-
+  #最大文件上传
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 50MB
 #服务器配置
 server:
   port: 8080
-
+  tomcat:
+    max-http-form-post-size: 100MB
 #mybatis配置
 mybatis:
   type-aliases-package: com.cwd.Entity
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
-
-#debug模式
-debug: true
+#debug模式:控制台打印详细的自动配置信息
+debug: false
 
