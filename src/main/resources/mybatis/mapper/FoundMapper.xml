@@ -6,7 +6,7 @@
 <!--    <select id="getLostList" resultType="com.cwd.Entity.Lost">-->
 <!--        select * from Lost-->
 <!--    </select>-->
-    <insert id="addLostItem" parameterType="com.cwd.Entity.Lost">
+    <insert id="addFoundItem" parameterType="com.cwd.Entity.Lost">
         --         自增主键
         <selectKey keyProperty="id" order="BEFORE"
                    resultType="java.lang.Integer">

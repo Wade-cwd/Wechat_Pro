@@ -32,7 +32,6 @@ public class HttpRequest {
             logger.info("网络回调获取的数据:"+line);
             result+=line;
         }
-        logger.info("返回结果字符串:"+result);
         return result;
  }
 }

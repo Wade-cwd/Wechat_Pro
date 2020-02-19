@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.mybatis.example.BlogMapper">
+    <insert id="addOneJob" parameterType="com.cwd.Entity.Job">
+--         自增主键
+        <selectKey keyProperty="id" order="BEFORE"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into job(workName,companyName,workPlace,workContent,workTime,salary,contact,mark)
+        values(#{workName},#{companyName},#{workPlace},#{workContent},#{workTime},#{salary},#{contact},#{mark})
+    </insert>
+</mapper>

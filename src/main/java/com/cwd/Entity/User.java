@@ -1,9 +1,11 @@
 package com.cwd.Entity;
 
+import org.springframework.stereotype.Component;
+
 import javax.naming.StringRefAddr;
 import java.io.Serializable;
 
-
+@Component
 public class User implements Serializable {
     public String uid="";
     private int id=-1;
@@ -11,7 +13,48 @@ public class User implements Serializable {
     private String code="";//登录时获取的 code
     private String userName="";//微信名
     private String avatarUrl="";//微信头像地址
+    private String signature="";
 
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid='" + uid + '\'' +
+                ", id=" + id +
+                ", code='" + code + '\'' +
+                ", userName='" + userName + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", signature='" + signature + '\'' +
+                ", rawData='" + rawData + '\'' +
+                ", encryptedData='" + encryptedData + '\'' +
+                '}';
+    }
+
+    private String rawData="";
+    private String encryptedData="";
+
+    public String getSignature() {
+        return signature;
+    }
+
+    public void setSignature(String signature) {
+        this.signature = signature;
+    }
+
+    public String getRawData() {
+        return rawData;
+    }
+
+    public void setRawData(String rawData) {
+        this.rawData = rawData;
+    }
+
+    public String getEncryptedData() {
+        return encryptedData;
+    }
+
+    public void setEncryptedData(String encryptedData) {
+        this.encryptedData = encryptedData;
+    }
 
     public String getUid() {
         return uid;

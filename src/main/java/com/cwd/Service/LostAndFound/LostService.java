@@ -55,9 +55,6 @@ public class LostService {
         }
         return lost;
     }
-    //读取媒体文件保存到服务器
-    public String writeFileToDirectory(MultipartFile multipartFile){
-            return fileUtil.writeFileToDirectory(multipartFile);
-    }
+
 
 }

@@ -2,22 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/FoundService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/FileUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/JsonToEntityUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostController/FoundController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Job.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/JobMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/JobService/JobService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AES/AES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AES/WXCore.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AES/WxPKCS7Encoder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/WorkMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wechat_Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Wechat_Pro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LoginController/WxLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LoginController/WxLogin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostController/LostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostController/LostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Found.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Found.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/GlobalConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/GlobalConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Lost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Lost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/FoundMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/FoundMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LoginService/WxLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LoginService/WxLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/FoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/FoundService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/LostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/LostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/config/WebSocketConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/HttpRequest/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/HttpRequest/HttpRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/FoundMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/FoundMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/LostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/LostMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/cwd/WxProApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cwd/WxProApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,7 +169,12 @@
       <workItem from="1581818066953" duration="8783000" />
       <workItem from="1581866039802" duration="2489000" />
       <workItem from="1581903364142" duration="34941000" />
-      <workItem from="1581948941488" duration="446000" />
+      <workItem from="1581948941488" duration="3302000" />
+      <workItem from="1581954408556" duration="64000" />
+      <workItem from="1581993039669" duration="9892000" />
+      <workItem from="1582020194087" duration="694000" />
+      <workItem from="1582026951740" duration="594000" />
+      <workItem from="1582079183942" duration="1947000" />
     </task>
     <task id="LOCAL-00001" summary="commitTest">
       <created>1580992453065</created>
@@ -271,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581866082192</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="完成失物招领编辑页">
+      <created>1581949436763</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1581949436764</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,25 +302,26 @@
     <MESSAGE value="更新jpa" />
     <MESSAGE value="更新网络模块，获取微信session" />
     <MESSAGE value="失物招领数据显示" />
-    <option name="LAST_COMMIT_MESSAGE" value="失物招领数据显示" />
+    <MESSAGE value="完成失物招领编辑页" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成失物招领编辑页" />
   </component>
   <component name="WindowStateProjectService">
     <state x="230" y="76" width="1122" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581748678813">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="230" y="76" width="1122" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1549.840@0.0.1549.840" timestamp="1581748678813" />
-    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1581940587159">
+    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1582083122248">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1549.840@0.0.1549.840" timestamp="1581940587159" />
+    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1549.840@0.0.1549.840" timestamp="1582083122248" />
     <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581759223339">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1549.840@0.0.1549.840" timestamp="1581759223339" />
-    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581866080562">
+    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581949435361">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581866080562" />
+    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581949435361" />
     <state x="555" y="162" key="FileChooserDialogImpl" timestamp="1580992385582">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -316,38 +334,38 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="646" y="312" width="261" height="217" key="Github.ShareDialog/0.0.1549.840@0.0.1549.840" timestamp="1580993025145" />
-    <state width="1229" height="278" key="GridCell.Tab.0.bottom" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.0.bottom" timestamp="1582083465865">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.0.center" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
+    <state width="1506" height="240" key="GridCell.Tab.0.center" timestamp="1582083465864">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.0.left" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1582083465864" />
+    <state width="1506" height="240" key="GridCell.Tab.0.left" timestamp="1582083465864">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.0.right" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1582083465864" />
+    <state width="1506" height="240" key="GridCell.Tab.0.right" timestamp="1582083465864">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.1.bottom" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1582083465864" />
+    <state width="1506" height="240" key="GridCell.Tab.1.bottom" timestamp="1582083465865">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.1.center" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
+    <state width="1506" height="240" key="GridCell.Tab.1.center" timestamp="1582083465865">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.1.left" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
+    <state width="1506" height="240" key="GridCell.Tab.1.left" timestamp="1582083465865">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
-    <state width="1229" height="278" key="GridCell.Tab.1.right" timestamp="1581947026045">
+    <state width="1506" height="240" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
+    <state width="1506" height="240" key="GridCell.Tab.1.right" timestamp="1582083465865">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1581947026045" />
+    <state width="1506" height="240" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
     <state width="1229" height="278" key="GridCell.Tab.2.bottom" timestamp="1581947026046">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -376,10 +394,10 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="284" y="63" key="SettingsEditor/0.0.1549.840@0.0.1549.840" timestamp="1581930209970" />
-    <state x="367" y="143" key="Vcs.Push.Dialog.v2" timestamp="1581433515954">
+    <state x="367" y="143" key="Vcs.Push.Dialog.v2" timestamp="1581954449427">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="367" y="143" key="Vcs.Push.Dialog.v2/0.0.1549.840@0.0.1549.840" timestamp="1581433515954" />
+    <state x="367" y="143" key="Vcs.Push.Dialog.v2/0.0.1549.840@0.0.1549.840" timestamp="1581954449427" />
     <state x="579" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581318621241">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -388,9 +406,9 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="432" y="191" key="run.anything.popup/0.0.1549.840@0.0.1549.840" timestamp="1581416840969" />
-    <state x="256" y="161" width="1241" height="678" key="search.everywhere.popup" timestamp="1581936091366">
+    <state x="256" y="161" width="1241" height="678" key="search.everywhere.popup" timestamp="1582007825648">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="256" y="161" width="1241" height="678" key="search.everywhere.popup/0.0.1549.840@0.0.1549.840" timestamp="1581936091366" />
+    <state x="256" y="161" width="1241" height="678" key="search.everywhere.popup/0.0.1549.840@0.0.1549.840" timestamp="1582007825648" />
   </component>
 </project>
