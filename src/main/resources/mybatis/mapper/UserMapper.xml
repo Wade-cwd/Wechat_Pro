@@ -3,8 +3,27 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cwd.Mapper.UserMapper">
-    <select id="getUserById" resultType="com.cwd.Entity.User">
-        select * from user where id = #{id}
+<!--    <select id="getUserById" resultType="com.cwd.Entity.User">-->
+<!--        select * from user where id = #{id}-->
+<!--    </select>-->
+<!--    插入用户-->
+    <insert id="addOneUser" parameterType="com.cwd.Entity.User">
+        <selectKey keyProperty="id" order="BEFORE"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into user(openid,userName,avatarUrl,code)
+        values(#{openid},#{userName},#{avatarUrl},#{code})
+    </insert>
+    <select id="getUid" resultType="java.lang.String">
+        select uid from user
     </select>
-
+<!--    拿到openid对应的数据条数-->
+    <select id="getByOpenidCount" resultType="java.lang.Integer" parameterType="java.lang.String">
+        select count(*) from user where openid=#{openid}
+    </select>
+<!--    拿到openid-->
+<!--    <select id="getByOpenid" resultType="java.lang.String">-->
+<!--        select openid from user-->
+<!--    </select>-->
 </mapper>

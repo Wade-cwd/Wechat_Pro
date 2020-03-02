@@ -2,27 +2,61 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="90973cc7-ac2a-4f24-97e7-b149b14029f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostController/FoundController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Job.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/JobMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/JobService/JobService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AES/AES.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AES/WXCore.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AES/WxPKCS7Encoder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/WorkMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Commons/CommonController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Community/TopicController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Market/MarketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/News/NewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/WebSocket/WebsocketController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/AddedApplications.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Certification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Comment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/IdCard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Market.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Topic.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/CommonMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/MarketMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/TopicMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Commons/CommonService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Community/TopicService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Market/MarketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/News/NewsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AliExpress.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/AliTool.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/HttpUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/KdniaoTrackQueryAPI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/CommonMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/MarketMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/video.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Wechat_Pro.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Wechat_Pro.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LoginController/WxLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LoginController/WxLogin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostController/LostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostController/LostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Job/JobController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Job/JobController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Login/WxLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/Login/WxLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostFound/FoundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostFound/FoundController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostFound/LostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Controller/LostFound/LostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Found.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Found.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/GlobalConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/GlobalConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Job.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Job.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Lost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/Lost.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/FoundMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/FoundMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LoginService/WxLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LoginService/WxLoginService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/JobMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Job/JobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Job/JobService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Login/WxLoginService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/Login/WxLoginService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/FoundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/FoundService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/LostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Service/LostAndFound/LostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/FileUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/FileUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/HttpRequest/HttpRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/Utils/HttpRequest/HttpRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/WxProApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/WxProApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cwd/config/WebSocketConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cwd/config/WebSocketConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/FoundMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/FoundMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/LostMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/LostMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/WorkMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mapper/WorkMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/cwd/WxProApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/cwd/WxProApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +71,7 @@
       <list>
         <option value="mybatis" />
         <option value="Mapper" />
+        <option value="HTML File" />
         <option value="Interface" />
         <option value="Class" />
       </list>
@@ -71,6 +106,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RequestMappingsPanelOrder0" value="0" />
     <property name="RequestMappingsPanelOrder1" value="1" />
     <property name="RequestMappingsPanelWidth0" value="75" />
@@ -78,12 +114,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/static" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\JavaWebProject\Wechat\Wechat_Pro\src\main\resources\static" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\JavaWebProject\Wechat\Wechat_Pro\src\main\java\com\cwd\Utils" />
       <recent name="D:\JavaWebProject\Wechat\Wechat_Pro\src\main\resources\mybatis" />
     </key>
   </component>
@@ -174,7 +214,36 @@
       <workItem from="1581993039669" duration="9892000" />
       <workItem from="1582020194087" duration="694000" />
       <workItem from="1582026951740" duration="594000" />
-      <workItem from="1582079183942" duration="1947000" />
+      <workItem from="1582079183942" duration="11361000" />
+      <workItem from="1582105496856" duration="602000" />
+      <workItem from="1582114318302" duration="10820000" />
+      <workItem from="1582160252989" duration="4732000" />
+      <workItem from="1582175055806" duration="3007000" />
+      <workItem from="1582185861577" duration="16040000" />
+      <workItem from="1582246225789" duration="16145000" />
+      <workItem from="1582271485789" duration="770000" />
+      <workItem from="1582272407491" duration="16527000" />
+      <workItem from="1582338874271" duration="4301000" />
+      <workItem from="1582360698882" duration="5766000" />
+      <workItem from="1582419227281" duration="16007000" />
+      <workItem from="1582505010116" duration="18352000" />
+      <workItem from="1582591924550" duration="26187000" />
+      <workItem from="1582678400421" duration="2289000" />
+      <workItem from="1582699733270" duration="599000" />
+      <workItem from="1582716976988" duration="6615000" />
+      <workItem from="1582764825722" duration="8061000" />
+      <workItem from="1582795274928" duration="17840000" />
+      <workItem from="1582817982132" duration="390000" />
+      <workItem from="1582818396018" duration="1064000" />
+      <workItem from="1582851586846" duration="859000" />
+      <workItem from="1582852620540" duration="8969000" />
+      <workItem from="1582868935212" duration="10145000" />
+      <workItem from="1582889431112" duration="8270000" />
+      <workItem from="1582904467582" duration="1498000" />
+      <workItem from="1582936889954" duration="20695000" />
+      <workItem from="1583047213441" duration="17536000" />
+      <workItem from="1583110438099" duration="77000" />
+      <workItem from="1583110599052" duration="708000" />
     </task>
     <task id="LOCAL-00001" summary="commitTest">
       <created>1580992453065</created>
@@ -288,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581949436764</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="添加">
+      <created>1582083537051</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1582083537051</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -303,29 +379,34 @@
     <MESSAGE value="更新网络模块，获取微信session" />
     <MESSAGE value="失物招领数据显示" />
     <MESSAGE value="完成失物招领编辑页" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成失物招领编辑页" />
+    <MESSAGE value="添加" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加" />
   </component>
   <component name="WindowStateProjectService">
     <state x="230" y="76" width="1122" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581748678813">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="230" y="76" width="1122" height="688" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1549.840@0.0.1549.840" timestamp="1581748678813" />
-    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1582083122248">
+    <state x="528" y="290" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog" timestamp="1582818370552">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1549.840@0.0.1549.840" timestamp="1582083122248" />
+    <state x="528" y="290" key="#com.intellij.ide.actions.ChooseComponentsToExportDialog/0.0.1549.840@0.0.1549.840" timestamp="1582818370552" />
+    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser" timestamp="1583069901145">
+      <screen x="0" y="0" width="1549" height="840" />
+    </state>
+    <state x="580" y="131" key="#com.intellij.ide.util.MemberChooser/0.0.1549.840@0.0.1549.840" timestamp="1583069901145" />
     <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1581759223339">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="505" y="168" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1549.840@0.0.1549.840" timestamp="1581759223339" />
-    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1581949435361">
+    <state x="396" y="15" key="CommitChangelistDialog2" timestamp="1582083535454">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1581949435361" />
-    <state x="555" y="162" key="FileChooserDialogImpl" timestamp="1580992385582">
+    <state x="396" y="15" key="CommitChangelistDialog2/0.0.1549.840@0.0.1549.840" timestamp="1582083535454" />
+    <state x="555" y="162" key="FileChooserDialogImpl" timestamp="1582818629448">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="555" y="162" key="FileChooserDialogImpl/0.0.1549.840@0.0.1549.840" timestamp="1580992385582" />
+    <state x="555" y="162" key="FileChooserDialogImpl/0.0.1549.840@0.0.1549.840" timestamp="1582818629448" />
     <state x="606" y="317" width="360" height="206" key="Github.CreateGistDialog" timestamp="1581907280920">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -334,66 +415,66 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="646" y="312" width="261" height="217" key="Github.ShareDialog/0.0.1549.840@0.0.1549.840" timestamp="1580993025145" />
-    <state width="1506" height="240" key="GridCell.Tab.0.bottom" timestamp="1582083465865">
+    <state width="1341" height="183" key="GridCell.Tab.0.bottom" timestamp="1583074553373">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
-    <state width="1506" height="240" key="GridCell.Tab.0.center" timestamp="1582083465864">
+    <state width="1341" height="183" key="GridCell.Tab.0.bottom/0.0.1549.840@0.0.1549.840" timestamp="1583074553373" />
+    <state width="1341" height="183" key="GridCell.Tab.0.center" timestamp="1583074553372">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1582083465864" />
-    <state width="1506" height="240" key="GridCell.Tab.0.left" timestamp="1582083465864">
+    <state width="1341" height="183" key="GridCell.Tab.0.center/0.0.1549.840@0.0.1549.840" timestamp="1583074553372" />
+    <state width="1341" height="183" key="GridCell.Tab.0.left" timestamp="1583074553372">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1582083465864" />
-    <state width="1506" height="240" key="GridCell.Tab.0.right" timestamp="1582083465864">
+    <state width="1341" height="183" key="GridCell.Tab.0.left/0.0.1549.840@0.0.1549.840" timestamp="1583074553372" />
+    <state width="1341" height="183" key="GridCell.Tab.0.right" timestamp="1583074553373">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1582083465864" />
-    <state width="1506" height="240" key="GridCell.Tab.1.bottom" timestamp="1582083465865">
+    <state width="1341" height="183" key="GridCell.Tab.0.right/0.0.1549.840@0.0.1549.840" timestamp="1583074553373" />
+    <state width="1341" height="183" key="GridCell.Tab.1.bottom" timestamp="1583074553373">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
-    <state width="1506" height="240" key="GridCell.Tab.1.center" timestamp="1582083465865">
+    <state width="1341" height="183" key="GridCell.Tab.1.bottom/0.0.1549.840@0.0.1549.840" timestamp="1583074553373" />
+    <state width="1341" height="183" key="GridCell.Tab.1.center" timestamp="1583074553373">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
-    <state width="1506" height="240" key="GridCell.Tab.1.left" timestamp="1582083465865">
+    <state width="1341" height="183" key="GridCell.Tab.1.center/0.0.1549.840@0.0.1549.840" timestamp="1583074553373" />
+    <state width="1341" height="183" key="GridCell.Tab.1.left" timestamp="1583074553373">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
-    <state width="1506" height="240" key="GridCell.Tab.1.right" timestamp="1582083465865">
+    <state width="1341" height="183" key="GridCell.Tab.1.left/0.0.1549.840@0.0.1549.840" timestamp="1583074553373" />
+    <state width="1341" height="183" key="GridCell.Tab.1.right" timestamp="1583074553373">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1506" height="240" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1582083465865" />
-    <state width="1229" height="278" key="GridCell.Tab.2.bottom" timestamp="1581947026046">
+    <state width="1341" height="183" key="GridCell.Tab.1.right/0.0.1549.840@0.0.1549.840" timestamp="1583074553373" />
+    <state width="1506" height="229" key="GridCell.Tab.2.bottom" timestamp="1582889335168">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.2.bottom/0.0.1549.840@0.0.1549.840" timestamp="1581947026046" />
-    <state width="1229" height="278" key="GridCell.Tab.2.center" timestamp="1581947026046">
+    <state width="1506" height="229" key="GridCell.Tab.2.bottom/0.0.1549.840@0.0.1549.840" timestamp="1582889335168" />
+    <state width="1506" height="229" key="GridCell.Tab.2.center" timestamp="1582889335164">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.2.center/0.0.1549.840@0.0.1549.840" timestamp="1581947026046" />
-    <state width="1229" height="278" key="GridCell.Tab.2.left" timestamp="1581947026046">
+    <state width="1506" height="229" key="GridCell.Tab.2.center/0.0.1549.840@0.0.1549.840" timestamp="1582889335164" />
+    <state width="1506" height="229" key="GridCell.Tab.2.left" timestamp="1582889335164">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.2.left/0.0.1549.840@0.0.1549.840" timestamp="1581947026046" />
-    <state width="1229" height="278" key="GridCell.Tab.2.right" timestamp="1581947026046">
+    <state width="1506" height="229" key="GridCell.Tab.2.left/0.0.1549.840@0.0.1549.840" timestamp="1582889335164" />
+    <state width="1506" height="229" key="GridCell.Tab.2.right" timestamp="1582889335166">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state width="1229" height="278" key="GridCell.Tab.2.right/0.0.1549.840@0.0.1549.840" timestamp="1581947026046" />
-    <state x="305" y="76" key="Maven.ArtifactSearchDialog" timestamp="1581750626104">
+    <state width="1506" height="229" key="GridCell.Tab.2.right/0.0.1549.840@0.0.1549.840" timestamp="1582889335166" />
+    <state x="305" y="76" key="Maven.ArtifactSearchDialog" timestamp="1582542093028">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="305" y="76" key="Maven.ArtifactSearchDialog/0.0.1549.840@0.0.1549.840" timestamp="1581750626104" />
+    <state x="305" y="76" key="Maven.ArtifactSearchDialog/0.0.1549.840@0.0.1549.840" timestamp="1582542093028" />
     <state x="382" y="83" key="Registry" timestamp="1581318143332">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="382" y="83" key="Registry/0.0.1549.840@0.0.1549.840" timestamp="1581318143332" />
-    <state x="284" y="63" key="SettingsEditor" timestamp="1581930209970">
+    <state x="284" y="63" key="SettingsEditor" timestamp="1582898150205">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="284" y="63" key="SettingsEditor/0.0.1549.840@0.0.1549.840" timestamp="1581930209970" />
+    <state x="284" y="63" key="SettingsEditor/0.0.1549.840@0.0.1549.840" timestamp="1582898150205" />
     <state x="367" y="143" key="Vcs.Push.Dialog.v2" timestamp="1581954449427">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
@@ -402,13 +483,13 @@
       <screen x="0" y="0" width="1549" height="840" />
     </state>
     <state x="579" y="338" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1549.840@0.0.1549.840" timestamp="1581318621241" />
-    <state x="432" y="191" key="run.anything.popup" timestamp="1581416840969">
+    <state x="432" y="191" key="run.anything.popup" timestamp="1582873855026">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="432" y="191" key="run.anything.popup/0.0.1549.840@0.0.1549.840" timestamp="1581416840969" />
-    <state x="256" y="161" width="1241" height="678" key="search.everywhere.popup" timestamp="1582007825648">
+    <state x="432" y="191" key="run.anything.popup/0.0.1549.840@0.0.1549.840" timestamp="1582873855026" />
+    <state x="257" y="161" width="1241" height="678" key="search.everywhere.popup" timestamp="1583070695212">
       <screen x="0" y="0" width="1549" height="840" />
     </state>
-    <state x="256" y="161" width="1241" height="678" key="search.everywhere.popup/0.0.1549.840@0.0.1549.840" timestamp="1582007825648" />
+    <state x="257" y="161" width="1241" height="678" key="search.everywhere.popup/0.0.1549.840@0.0.1549.840" timestamp="1583070695212" />
   </component>
 </project>

@@ -16,16 +16,10 @@ import java.sql.Date;
 public class Found implements Serializable {
 
     private  Integer id=0;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     private String uid="";
+    private String avatarUrl="";
+    private String nickName="";
+    private String openid="";
     @NotBlank
     private String article="";//物品名称
     @NotBlank
@@ -34,12 +28,62 @@ public class Found implements Serializable {
     private Date founddate=new Date(System.currentTimeMillis());//拾取日期
     @NotBlank
     private String foundplace="";//拾取地点
+
+    @Override
+    public String toString() {
+        return "Found{" +
+                "id=" + id +
+                ", uid='" + uid + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", openid='" + openid + '\'' +
+                ", article='" + article + '\'' +
+                ", feature='" + feature + '\'' +
+                ", founddate=" + founddate +
+                ", foundplace='" + foundplace + '\'' +
+                ", phone='" + phone + '\'' +
+                ", mark='" + mark + '\'' +
+                ", image='" + image + '\'' +
+                ", issuedate=" + issuedate +
+                '}';
+    }
+
     @NotBlank
     private String phone="";//电话号码
     private String mark="";//备注
     private String image="";//图片
     private Date issuedate=new Date(System.currentTimeMillis());//发布日期
 
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
     public String getUid() {
         return uid;
     }
@@ -112,18 +156,5 @@ public class Found implements Serializable {
         this.issuedate = issuedate;
     }
 
-    @Override
-    public String toString() {
-        return "Found{" +
-                "uid='" + uid + '\'' +
-                ", article='" + article + '\'' +
-                ", feature='" + feature + '\'' +
-                ", founddate=" + founddate +
-                ", foundplace='" + foundplace + '\'' +
-                ", phone='" + phone + '\'' +
-                ", mark='" + mark + '\'' +
-                ", image='" + image + '\'' +
-                ", issuedate=" + issuedate +
-                '}';
-    }
+
 }

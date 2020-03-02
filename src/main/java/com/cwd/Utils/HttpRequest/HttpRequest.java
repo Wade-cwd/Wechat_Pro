@@ -19,10 +19,10 @@ public class HttpRequest {
     private final Logger logger= LoggerFactory.getLogger(HttpRequest.class);
 
     //通过GET请求网络获取数据
-    public String openGET(String urlPath) throws IOException {
+    public String open(String urlPath,String requestType) throws IOException {
         URL url=new URL(urlPath);
         HttpURLConnection conn=(HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
+        conn.setRequestMethod(requestType);
         InputStream inputStream=conn.getInputStream();
         InputStreamReader inputStreamReader=new InputStreamReader(inputStream);
         BufferedReader reader=new BufferedReader(inputStreamReader);
@@ -32,6 +32,12 @@ public class HttpRequest {
             logger.info("网络回调获取的数据:"+line);
             result+=line;
         }
+        reader.close();
+        inputStreamReader.close();
+        inputStream.close();
+        conn.disconnect();
         return result;
  }
+
+
 }

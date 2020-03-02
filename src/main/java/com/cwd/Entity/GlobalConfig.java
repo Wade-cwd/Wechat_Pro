@@ -23,6 +23,23 @@ public class GlobalConfig  implements Serializable {
     //图片服务器的全局路径
     private  final String localFilePath="D:\\JavaWebProject\\Wechat\\Images\\";
 
+
+    //获取网易新闻类型
+    public String getNewsType(int index){
+        switch (index){
+            case 0:
+                return "BA10TA81wangning";//娱乐新闻
+            case 1:
+                return "BA8E6OEOwangning";//体育类
+            case 2:
+                return "BA8EE5GMwangning";//财经类
+            case 3:
+                return "BAI67OGGwangning";//军情类
+        }
+        return "";
+    }
+
+
     public String getAppid() {
         return appid;
     }
@@ -67,6 +84,7 @@ public class GlobalConfig  implements Serializable {
     public static Logger getLog(Class clazz){
         return LoggerFactory.getLogger(clazz);
     }
+
 
     @Override
     public String toString() {

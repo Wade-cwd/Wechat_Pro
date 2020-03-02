@@ -16,7 +16,7 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
     username: root
     password: cwd1995224920
-    url: jdbc:mysql://localhost:3306/wxdb?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/wxdb?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 下面为连接池的补充设置，应用到上面所有数据源中
     # 初始化大小，最小，最大
@@ -63,6 +63,14 @@ mybatis:
   type-aliases-package: com.cwd.Entity
   mapper-locations: classpath:mybatis/mapper/*.xml
   config-location: classpath:mybatis/mybatis-config.xml
+
+#pageHelper分页配置
+#pagehelper:
+#  dialect: mysql
+#  reasonable: true
+#  support-methods-arguments: true
+#  params: count=coutSql
 #debug模式:控制台打印详细的自动配置信息
 debug: false
+
 

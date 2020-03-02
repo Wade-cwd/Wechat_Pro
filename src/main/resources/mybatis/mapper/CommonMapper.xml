@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cwd.Mapper.CommonMapper">
+<!--    添加身份证审核信息-->
+    <insert id="addOneCheck" parameterType="com.cwd.Entity.Certification">
+        <selectKey keyProperty="id" order="BEFORE"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into certification(openid,nickName,avatarUrl,wechat,images,phone,isCheck,idCard,name)
+         values(#{openid},#{nickName},#{avatarUrl},#{wechat},#{images},#{phone},#{isCheck},#{idCard},#{name})
+    </insert>
+<!--    添加身份证信息-->
+    <insert id="addIdCardInfo" parameterType="com.cwd.Entity.IdCard">
+        <selectKey keyProperty="id" order="BEFORE"
+                   resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into idcard(openid,area,number,province,addrcode,city,sex,birth,region,age)
+        values(#{openid},#{area},#{number},#{province},#{addrcode},#{city},#{sex},#{birth},#{region},#{age})
+    </insert>
+<!--    实名认证审核状态查询-->
+    <select id="getByOpenid" resultType="java.lang.Integer" parameterType="java.lang.String">
+        select isCheck from certification where openid=#{openid}
+    </select>
+<!--    查询是否提交过实名认证审核-->
+    <select id="isSubmitCheck" parameterType="java.lang.String" resultType="java.lang.Integer">
+        select count(*) from certification where openid=#{openid}
+    </select>
+</mapper>

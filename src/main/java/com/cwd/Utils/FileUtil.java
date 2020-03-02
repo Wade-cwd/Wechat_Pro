@@ -8,8 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.util.UUID;
 
 @Component
@@ -40,5 +39,26 @@ public class FileUtil {
             }
         }
         return imageName;
+    }
+    //读取本地文件并产生输出流接口
+    public void readLocalFile(String filePath,String fileName,OutputStream outputStream){
+        File file=new File(filePath+fileName);
+        if(file.exists()){
+            try {
+                FileInputStream fileInputStream=new FileInputStream(file);//文件读取流
+                byte[] readBytes=new byte[1024];//一次读取1024字节
+                BufferedInputStream bufferedInputStream=new BufferedInputStream(fileInputStream);
+                while ((bufferedInputStream.read(readBytes))!=-1){
+                    outputStream.write(readBytes);
+                }
+                outputStream.flush();
+                bufferedInputStream.close();
+                fileInputStream.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

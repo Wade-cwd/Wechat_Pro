@@ -8,18 +8,21 @@ import java.io.Serializable;
 @Component
 public class User implements Serializable {
     public String uid="";
-    private int id=-1;
-
+    private Integer id=0;
+    private String openid="";
     private String code="";//登录时获取的 code
     private String userName="";//微信名
     private String avatarUrl="";//微信头像地址
     private String signature="";
+    private String rawData="";
+    private String encryptedData="";
 
     @Override
     public String toString() {
         return "User{" +
                 "uid='" + uid + '\'' +
                 ", id=" + id +
+                ", openid='" + openid + '\'' +
                 ", code='" + code + '\'' +
                 ", userName='" + userName + '\'' +
                 ", avatarUrl='" + avatarUrl + '\'' +
@@ -28,9 +31,6 @@ public class User implements Serializable {
                 ", encryptedData='" + encryptedData + '\'' +
                 '}';
     }
-
-    private String rawData="";
-    private String encryptedData="";
 
     public String getSignature() {
         return signature;
@@ -96,6 +96,13 @@ public class User implements Serializable {
         this.avatarUrl = avatarUrl;
     }
 
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
 
 
 }

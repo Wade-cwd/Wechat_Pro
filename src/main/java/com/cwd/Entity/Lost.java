@@ -1,25 +1,21 @@
 package com.cwd.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 import java.io.Serializable;
 import java.sql.Date;
 
 @Component
 public class Lost implements Serializable {
-    private  Integer id=0;
 
-    public int getId() {
-        return id;
-    }
+    private String nickName="";
+    private String avatarUrl="";
+    private String openid="";
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     private String uid="";
     @NotBlank
@@ -34,11 +30,14 @@ public class Lost implements Serializable {
     private String phone="";//电话号码
     private String mark="";//备注
     private String image="";//图片
-    private Date issuedate=new Date(System.currentTimeMillis());//发布日期
+
     @Override
     public String toString() {
         return "Lost{" +
-                "uid='" + uid + '\'' +
+                "nickName='" + nickName + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", openid='" + openid + '\'' +
+                ", uid='" + uid + '\'' +
                 ", article='" + article + '\'' +
                 ", feature='" + feature + '\'' +
                 ", lostdate=" + lostdate +
@@ -47,7 +46,45 @@ public class Lost implements Serializable {
                 ", mark='" + mark + '\'' +
                 ", image='" + image + '\'' +
                 ", issuedate=" + issuedate +
+                ", id=" + id +
                 '}';
+    }
+
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
+    private java.util.Date issuedate=new java.util.Date();//发布日期
+
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
+    private  Integer id=0;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
+
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
     }
 
     public String getUid() {
@@ -114,7 +151,7 @@ public class Lost implements Serializable {
         this.image = image;
     }
 
-    public Date getIssuedate() {
+    public java.util.Date getIssuedate() {
         return issuedate;
     }
 

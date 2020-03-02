@@ -3,17 +3,16 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cwd.Mapper.LostMapper">
-    <select id="getLostList" resultType="com.cwd.Entity.Lost">
+    <select id="getLostList"  resultType="com.cwd.Entity.Lost">
         select * from Lost
     </select>
     <insert id="addLostItem" parameterType="com.cwd.Entity.Lost">
---         自增主键
         <selectKey keyProperty="id" order="BEFORE"
                    resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert  into Lost(article,feature,lostplace,phone,image,mark)
-         values(#{article},#{feature},#{lostplace},#{phone},#{image},#{mark})
+        insert  into Lost(openid,nickName,avatarUrl,article,feature,lostplace,phone,image,mark,issuedate,lostdate)
+         values(#{openid},#{nickName},#{avatarUrl},#{article},#{feature},#{lostplace},#{phone},#{image},#{mark},#{issuedate},#{lostdate})
     </insert>
     
 </mapper>

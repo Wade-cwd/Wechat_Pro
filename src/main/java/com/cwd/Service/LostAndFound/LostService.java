@@ -7,6 +7,8 @@ import com.cwd.Mapper.LostMapper;
 import com.cwd.Utils.FileUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.apache.tomcat.util.http.fileupload.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,6 +18,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.util.List;
 import java.util.UUID;
@@ -35,8 +38,11 @@ public class LostService {
     private  Lost lost;
 
     //处理失物招领列表业务
-    public List<Lost> getLostList(){
-        return lostMapper.getLostList();
+    public PageInfo<Lost> getLostList(int pageNo,int pageSize){
+        PageHelper.startPage(pageNo,pageSize);//分页
+        List<Lost> losts=lostMapper.getLostList();
+        PageInfo<Lost> pageInfo=new PageInfo<>(losts);
+        return pageInfo;
     }
     //添加一条失物招领列表业务
     public void addLostItem(Lost lost){
@@ -55,6 +61,5 @@ public class LostService {
         }
         return lost;
     }
-
 
 }

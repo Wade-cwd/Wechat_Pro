@@ -12,6 +12,9 @@ import java.sql.Date;
 public class Job implements Serializable {
     private int id;
     private String uid="";
+    private String openid="";
+    private String avatarUrl="";
+    private String nickName="";
     private String workName="";
     private String companyName="";
     private String workPlace="";
@@ -26,6 +29,9 @@ public class Job implements Serializable {
         return "Job{" +
                 "id=" + id +
                 ", uid='" + uid + '\'' +
+                ", openid='" + openid + '\'' +
+                ", avatarUrl='" + avatarUrl + '\'' +
+                ", nickName='" + nickName + '\'' +
                 ", workName='" + workName + '\'' +
                 ", companyName='" + companyName + '\'' +
                 ", workPlace='" + workPlace + '\'' +
@@ -37,8 +43,29 @@ public class Job implements Serializable {
                 '}';
     }
 
+    public String getOpenid() {
+        return openid;
+    }
 
+    public void setOpenid(String openid) {
+        this.openid = openid;
+    }
 
+    public String getAvatarUrl() {
+        return avatarUrl;
+    }
+
+    public void setAvatarUrl(String avatarUrl) {
+        this.avatarUrl = avatarUrl;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
+    }
 
     public int getId() {
         return id;

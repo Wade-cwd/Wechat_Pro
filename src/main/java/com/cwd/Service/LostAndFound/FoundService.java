@@ -7,6 +7,8 @@ import com.cwd.Mapper.FoundMapper;
 import com.cwd.Utils.FileUtil;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,8 +29,11 @@ public class FoundService {
     @Autowired
     private FoundMapper foundMapper;
     //处理寻物启事列表业务
-    public List<Found> getFoudnList(){
-        return foundMapper.getFoundList();
+    public PageInfo<Found> getFoundList(int pageNo,int pageSize){
+        PageHelper.startPage(pageNo,pageSize);//分页
+        List<Found> founds=foundMapper.getFoundList();
+        PageInfo<Found> pageInfo=new PageInfo<>(founds);
+        return pageInfo;
     }
     //添加一条寻物启事列表业务
     public void addFoundItem(Found found){
