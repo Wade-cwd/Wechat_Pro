@@ -45,6 +45,14 @@ public class TopicController {
         GlobalConfig.getLog(this.getClass()).info("添加话题成功......");
     }
 
+    /*参加话题*/
+    @PostMapping("/joinTopic/{openid}/{addedOpenid}/{addedUid}")
+    public void joinTopic(@PathVariable("openid") String openid,@PathVariable("addedOpenid") String addedOpenid,
+                          @PathVariable("addedUid") String addedUid){
+        GlobalConfig.getLog(this.getClass()).info("处理参加话题请求");
+        topicService.joinTopic(openid,addedOpenid,addedUid);
+    }
+
     //获取话题数组
     @GetMapping("/getTopics/{openid}/{checkId}/{pageNo}/{pageSize}")
     public PageInfo<Topic> getUnCheckApplyTopic(@PathVariable("openid") String openid, @PathVariable("checkId") int checkId,
@@ -52,6 +60,7 @@ public class TopicController {
         PageInfo<Topic> list = null;
         if (checkId == 3) {
             //加入的话题数据
+            GlobalConfig.getLog(this.getClass()).info("已参加的话题");
             list = topicService.getAddedTopics(openid, pageNo, pageSize);
         } else {
             //非加入的话题数据
@@ -122,9 +131,24 @@ public class TopicController {
     }
 
     /*增加点赞数*/
-    @PutMapping("/plusThumbUp/{openid}/{uid}")
-    public void plusThumbUp(@PathVariable("openid") String openid,@PathVariable("uid") String uid){
-        topicService.plusThumbUp(openid,uid);
+    @PutMapping("/plusThumbUp/{openid}/{uid}/{userId}")
+    public void plusThumbUp(@PathVariable("openid") String openid,@PathVariable("uid") String uid,
+                            @PathVariable("userId") String userOpenid){
+        topicService.plusThumbUp(openid,uid,userOpenid);
+    }
+
+    /*返回是否可点赞*/
+    @GetMapping("/canPlusThumb/{openid}/{uid}/{userId}")
+    public Boolean getCanPlusThumb(@PathVariable("openid") String openid,@PathVariable("uid") String uid,
+                               @PathVariable("userId") String userOpenid){
+        return topicService.canPlusThumb(userOpenid,openid,uid);
+    }
+
+    /*标记已点赞*/
+    @PostMapping("/setHasPlusThumb/{openid}/{topicOpenid}/{topicUid}")
+    public void setPlusThumb(@PathVariable("openid") String openid,@PathVariable("topicOpenid") String topicOpenid,
+                             @PathVariable("topicUid") String topicUid){
+        topicService.setHasPlusThumb(openid,topicOpenid,topicUid);
     }
 
     /*查询点赞人数*/

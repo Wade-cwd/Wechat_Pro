@@ -3,11 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <script src="webjars/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-    你好
-    <video style="width: 500px;height: 500px;background-color: grey">
-        <source src='rtmp://106.53.76.225:9999/live/123' type="rtmp/flv"/>
-    </video>
+机器人<br>
+<div>
+    <input id="inputValue" type="text" placeholder="发送内容"><br>
+    <!--<button onclick="connect()">连接</button>-->
+    <button onclick="send()">发送</button>
+    <div id="content"></div>
+</div>
+
 </body>
+<script type="application/javascript">
+    let webSocket=null
+
+    function sendMessage(msg, webSocket) {//发送内容
+        webSocket.onopen = function (e) {//是否打开连接
+            webSocket.send(msg)
+        }
+    }
+
+    function receiveMessage(webSocket) {//从服务器获取信息
+
+        webSocket.onmessage = function (e) {
+            let str=JSON.parse(JSON.parse(JSON.stringify(e.data)))
+            console.log(str.message)
+           let msg = str.message
+            $('#content').append(msg+'<br>')
+        }
+
+    }
+
+    function connectionWebsocket(roomId, userName) {//连接websocket
+        return new WebSocket('ws://localhost:8080/chat/cwd/oGqYC5S98QNhtPuTpIbd1or6kgkc');
+    }
+
+    function closeWebsocket(websocket) {//关闭websocket连接
+        websocket.close()
+    }
+
+    //业务
+    // function connect() {//连接
+    //     let roomId = $('#roomId').val();
+    //     let userName = $('#userName').val();
+    //     webSocket=connectionWebsocket(roomId,userName)
+    // }
+    function send() {
+        let value = $('#inputValue').val();
+        let roomId = $('#roomId').val();
+        let userName = $('#userName').val();
+        let webSocket=connectionWebsocket(roomId,userName)
+        sendMessage(value, webSocket)//发送消息
+        receiveMessage(webSocket)//获取消息
+        // closeWebsocket(webSocket)//关闭连接
+
+    }
+
+</script>
 </html>

@@ -2,6 +2,7 @@ package com.cwd.Mapper;
 
 import com.cwd.Entity.AddedApplications;
 import com.cwd.Entity.Comment;
+import com.cwd.Entity.PlusThumb;
 import com.cwd.Entity.Topic;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Repository;
@@ -29,6 +30,12 @@ public interface TopicMapper {
             "#{addedOpenid},#{addedUid})")
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void postAddedApplication(AddedApplications addedApplications);//添加一条已参加的话题
+
+    /*查询是否已参加话题*/
+    @Select("select count(*) from AddedApplications where openid=#{openid} and addedOpenid=#{addedOpenid} and " +
+            " addedUid=#{addedUid}")
+    @ResultType(Integer.class)
+    int isJoinedTopic(AddedApplications addedApplications);
 
     @Select("select * from AddedApplications where openid=#{openid}")
     @ResultType(value = AddedApplications.class)
@@ -93,5 +100,26 @@ public interface TopicMapper {
     /*查询点赞数*/
     @Select("select thumbUp from topic where openid=#{openid} and uid=#{uid} and isCheck=1")
     @ResultType(Integer.class)
-    int getThumbUp(String openid,String uid );
+    int getThumbUp(String openid, String uid);
+
+    /*添加话题已点赞数据*/
+    @Insert("insert into PlusThumb(openid,uid,topicOpenid,topicUid,isTopicPlusThumb)" +
+            " values(#{openid},#{uid},#{topicOpenid},#{topicUid},#{isTopicPlusThumb})")
+    @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
+    void setThumbUp(PlusThumb plusThumb);
+
+
+    /*查询是否存在已点赞设置数据*/
+    @Select("select count(*) from PlusThumb where openid=#{openid} and topicOpenid=#{topicOpenid} and topicUid=#{topicUid}")
+    @ResultType(Integer.class)
+    Integer isExistThumbUp(PlusThumb plusThumb);
+
+    /*是否可点赞数据*/
+    @Select("select * from PlusThumb where openid=#{openid} and topicOpenid=#{topicOpenid} and topicUid=#{topicUid}")
+    @ResultType(PlusThumb.class)
+    PlusThumb getPlusThumb(PlusThumb plusThumb);
+
+    /*设置是否可点赞*/
+    @Update("update PlusThumb set isTopicPlusThumb=#{isTopicPlusThumb} where openid=#{openid} and topicOpenid=#{topicOpenid} and topicUid=#{topicUid}")
+    void setCanPlusThumb(String isTopicPlusThumb, String openid, String topicOpenid, String topicUid);
 }
