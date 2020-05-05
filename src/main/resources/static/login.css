@@ -1,0 +1,30 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background: url("http://www.chiwenda.xyz:81/wx_site/images/bg4.jpg");
+}
+.customer_margin_top{
+    margin-top: 10px;
+}
+.login_box{
+    width: 400px;
+    height: 300px;
+    box-shadow: 0px 0px 10px  rgba(169, 169, 169, 0.4);
+    border-radius: 2% 2% 2% 2%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+.login_title{
+    width: 100%;
+    display: block;
+    font-size: xx-large;
+    margin-bottom: 50px;
+}
+.form_submit{
+    width: 100%;
+}
+.submit_btn{
+    width: 200px;
+}

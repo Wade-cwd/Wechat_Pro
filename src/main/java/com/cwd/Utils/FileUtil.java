@@ -21,18 +21,18 @@ public class FileUtil {
         String imageName="";
         if(multipartFile!=null){
             //获取文件名及后缀名
-            String fileName=multipartFile.getOriginalFilename();
-            String suffixName=fileName.substring(fileName.lastIndexOf('.'));
+            String fileName=multipartFile.getOriginalFilename();//文件名
+            String suffixName=fileName.substring(fileName.lastIndexOf('.'));//文件名称后缀
             //处理图片类型的文件
-            imageName= UUID.randomUUID()+suffixName;
+            imageName= UUID.randomUUID()+suffixName;//生成唯一识别码作为文件名称
             logger.info(imageName);
             File file=new File(this.globalConfig.getLocalFilePath()+imageName);
-            if(!file.getParentFile().exists()){
+            if(!file.getParentFile().exists()){//上一级文件夹不存在
                 file.getParentFile().mkdir();
                 logger.info("------文件夹创建成功...");
             }
             try {
-                multipartFile.transferTo(file);
+                multipartFile.transferTo(file);//写入
                 logger.info("-----"+imageName+"保存到本地成功");
             } catch (IOException e) {
                 new IOException("LostService------文件保存错误"+e.getMessage());

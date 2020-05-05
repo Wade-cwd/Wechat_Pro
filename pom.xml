@@ -84,10 +84,14 @@
                 </exclusion>
             </exclusions>
         </dependency>
-<!--        页面模版-->
+<!--        页面模版引擎-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId></groupId>
+            <artifactId></artifactId>
         </dependency>
 <!--    springboot缓存-->
         <dependency>
@@ -191,9 +195,11 @@
             <artifactId>jquery</artifactId>
             <version>3.4.1</version>
         </dependency>
-
-
-
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <scope>test</scope>
+        </dependency>
 
 
     </dependencies>
@@ -210,5 +216,30 @@
             </plugin>
         </plugins>
     </build>
+
+
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <configuration>
+                <nonFilteredFileExtensions>
+                    <nonFilteredFileExtension>woff</nonFilteredFileExtension>
+                    <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
+                    <nonFilteredFileExtension>eot</nonFilteredFileExtension>
+                    <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
+                    <nonFilteredFileExtension>svg</nonFilteredFileExtension>
+                </nonFilteredFileExtensions>
+            </configuration>
+        </plugin>
+    </plugins>
 
 </project>

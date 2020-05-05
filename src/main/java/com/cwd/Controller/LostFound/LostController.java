@@ -46,12 +46,12 @@ public class LostController {
     @PostMapping(value = "/submitForm",consumes ={"multipart/form-data","application/json"} )
     public void submitForm(HttpServletRequest request ,@RequestParam("file") MultipartFile images) throws IOException, NoSuchMethodException, InstantiationException, IllegalAccessException, InvocationTargetException, ParseException {
         String formData=request.getParameter("form_data");
-        //表单数据
+        //处理表单数据
         Lost lost= lostService.jsonToLost(formData);
         logger.info(lost.toString());
-        //文件写入文件夹
+        //文件写入服务器文件系统
         String imgName= fileUtil.writeFileToDirectory(images);
-        //写入数据库
+        //数据写入数据库
         lost.setImage(imgName);
         logger.info("图片"+lost.getImage());
         lostService.addLostItem(lost);

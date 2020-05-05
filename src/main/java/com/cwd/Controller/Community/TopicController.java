@@ -40,7 +40,6 @@ public class TopicController {
         topic.setImage(fileName);//设置唯一文件名
         topic.setUid(UUID.randomUUID().toString());//设置话题唯一标识
         GlobalConfig.getLog(this.getClass()).info("话题:" + topic);
-
         topicService.addOneTopic(topic);//添加话题
         GlobalConfig.getLog(this.getClass()).info("添加话题成功......");
     }

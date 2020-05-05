@@ -39,7 +39,7 @@ public class LostService {
 
     //处理失物招领列表业务
     public PageInfo<Lost> getLostList(int pageNo,int pageSize){
-        PageHelper.startPage(pageNo,pageSize);//分页
+        PageHelper.startPage(pageNo,pageSize);//PageHelper分页功能，需要写在获取数据函数前
         List<Lost> losts=lostMapper.getLostList();
         PageInfo<Lost> pageInfo=new PageInfo<>(losts);
         return pageInfo;
