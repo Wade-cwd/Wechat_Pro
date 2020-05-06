@@ -89,10 +89,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
-        <dependency>
-            <groupId></groupId>
-            <artifactId></artifactId>
-        </dependency>
 <!--    springboot缓存-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -144,6 +140,20 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.10.2</version>
         </dependency>
+
+        <!--shiro权限框架-->
+        <dependency>
+            <groupId>org.apache.shiro</groupId>
+            <artifactId>shiro-spring</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+        <!--lombox-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+
 <!--        小程序解密算法-->
         <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->
         <dependency>
@@ -157,12 +167,6 @@
             <artifactId>commons-codec</artifactId>
             <version>1.14</version>
         </dependency>
-
-<!--        <dependency>-->
-<!--            <groupId>net.sf.json-lib</groupId>-->
-<!--            <artifactId>json-lib</artifactId>-->
-<!--            <version>2.2.3</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
@@ -218,28 +222,28 @@
     </build>
 
 
-    <plugins>
-        <plugin>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-maven-plugin</artifactId>
-            <configuration>
-                <fork>true</fork>
+<!--    <plugins>-->
+<!--        <plugin>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            <configuration>-->
+<!--                <fork>true</fork>-->
 
-            </configuration>
-        </plugin>
-        <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-resources-plugin</artifactId>
-            <configuration>
-                <nonFilteredFileExtensions>
-                    <nonFilteredFileExtension>woff</nonFilteredFileExtension>
-                    <nonFilteredFileExtension>woff2</nonFilteredFileExtension>
-                    <nonFilteredFileExtension>eot</nonFilteredFileExtension>
-                    <nonFilteredFileExtension>ttf</nonFilteredFileExtension>
-                    <nonFilteredFileExtension>svg</nonFilteredFileExtension>
-                </nonFilteredFileExtensions>
-            </configuration>
-        </plugin>
-    </plugins>
+<!--            </configuration>-->
+<!--        </plugin>-->
+<!--        <plugin>-->
+<!--            <groupId>org.apache.maven.plugins</groupId>-->
+<!--            <artifactId>maven-resources-plugin</artifactId>-->
+<!--            <configuration>-->
+<!--                <nonFilteredFileExtensions>-->
+<!--                    <nonFilteredFileExtension>woff</nonFilteredFileExtension>-->
+<!--                    <nonFilteredFileExtension>woff2</nonFilteredFileExtension>-->
+<!--                    <nonFilteredFileExtension>eot</nonFilteredFileExtension>-->
+<!--                    <nonFilteredFileExtension>ttf</nonFilteredFileExtension>-->
+<!--                    <nonFilteredFileExtension>svg</nonFilteredFileExtension>-->
+<!--                </nonFilteredFileExtensions>-->
+<!--            </configuration>-->
+<!--        </plugin>-->
+<!--    </plugins>-->
 
 </project>

@@ -51,8 +51,8 @@ spring:
   freemarker:
     charset: UTF-8
     cache: false
-    check-template-location: true
-    prefer-file-system-access: true
+#    check-template-location: true
+#    prefer-file-system-access: true
     suffix: .ftl
 #开启静态资源热更新
   devtools:
@@ -72,8 +72,6 @@ mybatis:
 
 #debug模式:控制台打印详细的自动配置信息
 debug: false
-###
-person:
-  lastName: 池文达
+
 
 
