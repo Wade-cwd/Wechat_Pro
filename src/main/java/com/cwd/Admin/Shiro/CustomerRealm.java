@@ -2,10 +2,7 @@ package com.cwd.Admin.Shiro;
 
 import com.cwd.Admin.Service.LoginService;
 import com.cwd.Entity.Admin;
-import org.apache.shiro.authc.AuthenticationException;
-import org.apache.shiro.authc.AuthenticationInfo;
-import org.apache.shiro.authc.AuthenticationToken;
-import org.apache.shiro.authc.SimpleAuthenticationInfo;
+import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -30,17 +27,15 @@ public class CustomerRealm  extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         Logger.getGlobal().info("登录校验开始......");
         //获取账号
-        String userName= (String) authenticationToken.getPrincipal();
-        Logger.getGlobal().info("获取用户输入的账号："+userName);
+        UsernamePasswordToken usernamePasswordToken= (UsernamePasswordToken) authenticationToken;
+        Logger.getGlobal().info("获取用户输入的账号："+usernamePasswordToken.getUsername());
         //数据库验证
-        Admin admin= loginService.findByUserName(userName);
+        Admin admin= loginService.findAdminByUserName(usernamePasswordToken.getUsername());
+        //查询不到账号返回null,shiro抛出账号不存在
         if(admin==null) return null;
-        Logger.getGlobal().info("对比用户名:"+userName+"与"+admin.getUserName());
-        SimpleAuthenticationInfo authenticationInfo=new SimpleAuthenticationInfo(userName,
-                admin.getPassword(),
-                ByteSource.Util.bytes(admin.getPassword()),
-                getName());
-        Logger.getGlobal().info("授权信息："+authenticationInfo.toString());
+        Logger.getGlobal().info("查询到用户名:"+admin.getUserName()+" 密码："+admin.getPassword());
+        SimpleAuthenticationInfo authenticationInfo=new SimpleAuthenticationInfo("", admin.getPassword(),
+                "");
         return authenticationInfo;
     }
 }

@@ -1,12 +1,12 @@
 package com.cwd.Controller.LostFound;
 
+import com.alibaba.fastjson.JSONObject;
 import com.cwd.Entity.Found;
 import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Lost;
 import com.cwd.Service.LostAndFound.FoundService;
 import com.cwd.Utils.FileUtil;
 import com.github.pagehelper.PageInfo;
-import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +18,11 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/found")
 public class FoundController {
-    private final Logger logger= LoggerFactory.getLogger(LostController.class);
 
     @Autowired
     private FileUtil fileUtil;
@@ -38,12 +38,12 @@ public class FoundController {
         String formData=request.getParameter("form_data");
         //表单数据
         Found found= foundService.jsonToFound(formData);
-        logger.info(found.toString());
+        Logger.getGlobal().info(found.toString());
         //文件写入文件夹
         String imgName= fileUtil.writeFileToDirectory(images);
         //写入数据库
         found.setImage(imgName);
-        logger.info("图片"+found.getImage());
+        Logger.getGlobal().info("图片"+found.getImage());
         foundService.addFoundItem(found);
     }
     /*
@@ -54,6 +54,21 @@ public class FoundController {
                               @PathVariable(value = "pageSize")int pageSize){
         PageInfo<Found> founds=foundService.getFoundList(pageNo,pageSize);
         return  founds;
+    }
+    @PostMapping("/getFound_LayUI/{pageNo}/{pageSize}")
+    public Object getFoundList_LayUiJson(@PathVariable(value = "pageNo")int pageNo,
+                                         @PathVariable(value = "pageSize")int pageSize){
+        PageInfo<Found> founds=foundService.getFoundList(pageNo,pageSize);
+        java.util.logging.Logger.getGlobal().info("寻物启事分页格式:"+founds.toString());
+        Object object= JSONObject.toJSON(founds);
+        JSONObject jsonObject= (JSONObject) object;
+        JSONObject newJsonObj=new JSONObject();
+        newJsonObj.put("code",0);
+        newJsonObj.put("msg","");
+        newJsonObj.put("count",1000);
+        newJsonObj.put("data",jsonObject.get("list"));
+        java.util.logging.Logger.getGlobal().info("寻物启事json格式:"+founds.toString());
+        return  newJsonObj;
     }
     //下载文件请求
     @GetMapping(value = "/downloadImage/{image}")

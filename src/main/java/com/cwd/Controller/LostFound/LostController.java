@@ -1,28 +1,28 @@
 package com.cwd.Controller.LostFound;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Lost;
 import com.cwd.Service.LostAndFound.LostService;
 import com.cwd.Utils.FileUtil;
+import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.github.pagehelper.PageInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.mybatis.logging.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.List;
+import java.util.logging.Logger;
 
 @RestController
 @RequestMapping("/lost")
 public class LostController {
-    private final Logger logger=LoggerFactory.getLogger(LostController.class);
     @Autowired
     private GlobalConfig globalConfig;
 
@@ -41,6 +41,23 @@ public class LostController {
         return  losts;
     }
     /*
+     * 返回失物招领列表，分页每页10条,标准layUi框架json格式
+     * */
+    @PostMapping("/getLostJson/{pageNo}/{pageSize}")
+    public Object getLostListJson(@PathVariable(value = "pageNo")int pageNo,
+                              @PathVariable(value = "pageSize")int pageSize){
+        PageInfo<Lost> losts=lostService.getLostList(pageNo,pageSize);
+        Logger.getGlobal().info("失物招领分页格式:"+losts.toString());
+        JSONObject jsonObject= (JSONObject) JSONObject.toJSON(losts);
+        JSONObject newJsonObj=new JSONObject();
+        newJsonObj.put("code",0);
+        newJsonObj.put("msg","");
+        newJsonObj.put("count",1000);
+        newJsonObj.put("data",jsonObject.get("list"));
+        Logger.getGlobal().info("失物招领json格式:"+losts.toString());
+        return  newJsonObj;
+    }
+    /*
     * 获取前端数据文件,写入本地数据库
     * */
     @PostMapping(value = "/submitForm",consumes ={"multipart/form-data","application/json"} )
@@ -48,12 +65,12 @@ public class LostController {
         String formData=request.getParameter("form_data");
         //处理表单数据
         Lost lost= lostService.jsonToLost(formData);
-        logger.info(lost.toString());
+        Logger.getGlobal().info(lost.toString());
         //文件写入服务器文件系统
         String imgName= fileUtil.writeFileToDirectory(images);
         //数据写入数据库
         lost.setImage(imgName);
-        logger.info("图片"+lost.getImage());
+        Logger.getGlobal().info("图片"+lost.getImage());
         lostService.addLostItem(lost);
     }
     //下载文件请求

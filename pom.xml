@@ -152,7 +152,8 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
+<!--        rabbitmq-->
+        
 
 <!--        小程序解密算法-->
         <!-- https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on -->

@@ -8,12 +8,14 @@ import com.cwd.Entity.Market;
 import com.cwd.Mapper.CommonMapper;
 import com.cwd.Utils.AliExpress;
 import com.cwd.Utils.AliTool;
+import com.cwd.Utils.FileUtil;
 import com.cwd.Utils.HttpRequest.HttpRequest;
 import com.cwd.Utils.KdniaoTrackQueryAPI;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.logging.Logger;
 
 @Service
 public class CommonService {
@@ -60,8 +62,10 @@ public class CommonService {
         return "";
     }
     //阿里的快递接口
-    public  String getAliExpress(String expressNo,String expressType){
-        return new AliExpress().getExpress(expressNo,expressType);
+    public  String getAliExpress(String expressCode){
+        String expressInfo=new AliExpress().getExpress(expressCode);
+        Logger.getGlobal().info("快递信息:"+FileUtil.decodeUnicode(expressInfo));
+        return FileUtil.decodeUnicode(expressInfo);
     }
     //添加图片路径
     public void appendImageString(String imagePath){

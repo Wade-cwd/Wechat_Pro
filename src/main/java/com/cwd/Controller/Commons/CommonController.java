@@ -35,10 +35,9 @@ public class CommonController {
         return commonService.getWeatherCity(city);
     }
     //快递物流查询expressId:快递类型
-    @PostMapping("/getExpress/{expressId}/{expressNo}")
-    public String getExpress(@PathVariable("expressId") String expressId,
-                             @PathVariable("expressNo") String expressNo){
-        return commonService.getAliExpress(expressNo,expressId);
+    @PostMapping("/getExpress/{expressCode}")
+    public String getExpress(@PathVariable("expressCode") String expressCode){
+        return commonService.getAliExpress(expressCode);
     }
     //身份证图片上传
     @PostMapping(value = "/uploadCertification",consumes = {"multipart/form-data"})

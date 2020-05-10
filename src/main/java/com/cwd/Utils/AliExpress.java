@@ -1,47 +1,48 @@
 package com.cwd.Utils;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class AliExpress {
-    public String getExpress(String expressNo,String expressType){
-        String host = "https://wuliu.market.alicloudapi.com";
-        String path = "/kdi";
-        String method = "GET";
-        System.out.println("请先替换成自己的AppCode");
-        String appcode = "6dade382f0424894b2447ccde3bd4ce4";  // !!!替换填写自己的AppCode 在买家中心查看
+    public String getExpress(String expressCode){
+        String host = "https://kuaidid.market.alicloudapi.com";
+        String path = "/danhao";
+        String method = "POST";
+        String appcode = "6dade382f0424894b2447ccde3bd4ce4";
         Map<String, String> headers = new HashMap<String, String>();
-        headers.put("Authorization", "APPCODE " + appcode); //格式为:Authorization:APPCODE 83359fd73fe11248385f570e3c139xxx
+        //最后在header中的格式(中间是英文空格)为Authorization:APPCODE 83359fd73fe94948385f570e3c139105
+        headers.put("Authorization", "APPCODE " + appcode);
+        //根据API的要求，定义相对应的Content-Type
+        headers.put("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
         Map<String, String> querys = new HashMap<String, String>();
-        querys.put("no", expressNo);// !!! 请求参数
-        querys.put("type", expressType);// !!! 请求参数
-        //JDK 1.8示例代码请在这里下载：  http://code.fegine.com/Tools.zip
+        Map<String, String> bodys = new HashMap<String, String>();
+//        bodys.put("com", "zhongtong");
+        bodys.put("src", expressCode);
+
+
         try {
             /**
              * 重要提示如下:
              * HttpUtils请从
              * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/src/main/java/com/aliyun/api/gateway/demo/util/HttpUtils.java
-             * 或者直接下载：
-             * http://code.fegine.com/HttpUtils.zip
              * 下载
              *
              * 相应的依赖请参照
              * https://github.com/aliyun/api-gateway-demo-sign-java/blob/master/pom.xml
-             * 相关jar包（非pom）直接下载：
-             * http://code.fegine.com/aliyun-jar.zip
              */
-            HttpResponse response = HttpUtils.doGet(host, path, method, headers, querys);
-            //System.out.println(response.toString());如不输出json, 请打开这行代码，打印调试头部状态码。
-            //状态码: 200 正常；400 URL无效；401 appCode错误； 403 次数用完； 500 API网管错误
+            HttpResponse response = HttpUtils.doPost(host, path, method, headers, querys, bodys);
+            System.out.println(response.toString());
             //获取response的body
-//            System.out.println(EntityUtils.toString(response.getEntity())); //输出json
-            return  EntityUtils.toString(response.getEntity());
+//            System.out.println(EntityUtils.toString(response.getEntity()));
+            return EntityUtils.toString(response.getEntity(),"utf-8");
         } catch (Exception e) {
             e.printStackTrace();
+            return "获取快递信息错误";
         }
-        return "";
     }
 }

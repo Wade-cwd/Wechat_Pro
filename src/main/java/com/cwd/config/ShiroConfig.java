@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 /*description:shiro configuration
 * @Author chiwenda
@@ -20,15 +21,15 @@ import java.util.Map;
 public class ShiroConfig {
     @Bean
     public ShiroFilterFactoryBean shiroFilterFactoryBean(SecurityManager securityManager){
+        Logger.getGlobal().info("配置shiro......");
         ShiroFilterFactoryBean shiroFilterFactoryBean=new ShiroFilterFactoryBean();
         shiroFilterFactoryBean.setSecurityManager(securityManager);
         Map<String,String> map=new LinkedHashMap<>();
 //        static resources pass
-//        map.put("/js/**","anon");
-//        map.put("/css/**","anon");
-//        map.put("/static/**","anon");
-//        map.put("/admin/index","authc");
-        map.put("/admin/login","authc");
+        map.put("/js/**","anon");
+        map.put("/css/**","anon");
+        map.put("/admin/login","anon");
+//        map.put("/admin/index","anon");
         map.put("/logout","logout");
 //        map.put("/**","authc");
         shiroFilterFactoryBean.setFilterChainDefinitionMap(map);
@@ -37,7 +38,7 @@ public class ShiroConfig {
         //登录后跳转路由
         shiroFilterFactoryBean.setSuccessUrl("/admin/index");
         //认证不通过
-
+        shiroFilterFactoryBean.setUnauthorizedUrl("error");
         return  shiroFilterFactoryBean;
     }
     @Bean

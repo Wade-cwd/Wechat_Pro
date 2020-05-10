@@ -24,22 +24,25 @@
             管理员登录
         </label>
         <div>
-            <form id="form">
+            <form id="form" action="/admin/login" method="post">
                 <section>
                     <div class="navbar-form text-center">
                         <div class="form-group ">
-                            <input v-model="userName"  type="text" class="form-control" placeholder="请输入账号" autofocus required="用户名">
+                            <input  name="userName"  type="text" class="form-control" placeholder="请输入账号" autofocus required="用户名">
                         </div>
                         <div class="form-group customer_margin_top">
-                            <input v-model="password"  type="password" class="form-control" placeholder="请输入密码" required="密码必填">
+                            <input  name="password" type="password" class="form-control" placeholder="请输入密码" required="密码必填">
                         </div>
                         <div class="form_submit customer_margin_top">
-                            <input v-on:click="submit"  type="submit" class="btn btn-info submit_btn">
+                            <input type="submit" class="btn btn-info submit_btn">
                         </div>
                     </div>
                 </section>
             </form>
         </div>
+        <label class="login_info text-center">
+            <span>${loginStatus!}</span>
+        </label>
     </div>
 </body>
 <script src="http://www.chiwenda.xyz:81/static/jquery.min.js"></script>

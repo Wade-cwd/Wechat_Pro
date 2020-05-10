@@ -1,5 +1,7 @@
 package com.cwd.Controller.Job;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Job;
 import com.cwd.Entity.Lost;
@@ -32,6 +34,21 @@ public class JobController {
                               @PathVariable(value = "pageSize")int pageSize){
         PageInfo<Job> jobs=jobService.getJobList(pageNo,pageSize);
         return  jobs;
+    }
+    /*返回Layui标准格式Json分页数据
+    * */
+    @PostMapping("/getJob_LayUI/{pageNo}/{pageSize}")
+    public Object getJobListJson(@PathVariable(value = "pageNo")int pageNo,
+                             @PathVariable(value = "pageSize")int pageSize){
+        PageInfo<Job> jobs=jobService.getJobList(pageNo,pageSize);
+        Object objectData=  JSONObject.toJSON(jobs);
+        JSONObject jsonObject= (JSONObject) objectData;
+        JSONObject newJsonObj=new JSONObject();
+        newJsonObj.put("code",0);
+        newJsonObj.put("msg","");
+        newJsonObj.put("count",1000);
+        newJsonObj.put("data",jsonObject.get("list"));
+        return  newJsonObj;
     }
 
 }

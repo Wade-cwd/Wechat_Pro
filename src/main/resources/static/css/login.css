@@ -22,6 +22,12 @@ body{
     font-size: xx-large;
     margin-bottom: 50px;
 }
+.login_info{
+    width: 100%;
+    display: block;
+    font-size: x-large;
+    color: red;
+}
 .form_submit{
     width: 100%;
 }
