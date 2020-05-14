@@ -6,6 +6,7 @@ import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Lost;
 import com.cwd.Service.LostAndFound.FoundService;
 import com.cwd.Utils.FileUtil;
+import com.cwd.Utils.LayUI;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 @RestController
@@ -43,6 +45,7 @@ public class FoundController {
         String imgName= fileUtil.writeFileToDirectory(images);
         //写入数据库
         found.setImage(imgName);
+        found.setUid(UUID.randomUUID().toString());
         Logger.getGlobal().info("图片"+found.getImage());
         foundService.addFoundItem(found);
     }
@@ -59,16 +62,9 @@ public class FoundController {
     public Object getFoundList_LayUiJson(@PathVariable(value = "pageNo")int pageNo,
                                          @PathVariable(value = "pageSize")int pageSize){
         PageInfo<Found> founds=foundService.getFoundList(pageNo,pageSize);
-        java.util.logging.Logger.getGlobal().info("寻物启事分页格式:"+founds.toString());
-        Object object= JSONObject.toJSON(founds);
-        JSONObject jsonObject= (JSONObject) object;
-        JSONObject newJsonObj=new JSONObject();
-        newJsonObj.put("code",0);
-        newJsonObj.put("msg","");
-        newJsonObj.put("count",1000);
-        newJsonObj.put("data",jsonObject.get("list"));
         java.util.logging.Logger.getGlobal().info("寻物启事json格式:"+founds.toString());
-        return  newJsonObj;
+        Integer count=foundService.getFoundCount();
+        return LayUI.getLayUIFormatData(founds,count);
     }
     //下载文件请求
     @GetMapping(value = "/downloadImage/{image}")
@@ -94,5 +90,16 @@ public class FoundController {
                 e.printStackTrace();
             }}
 
+    }
+    /*更新字段*/
+    @PostMapping("/updateFoundField/{fieldName}/{value}/{uid}/{openid}")
+    public Integer postFountField(@PathVariable("fieldName")String fieldName,@PathVariable("value")String value,
+                                  @PathVariable("uid")String uid,@PathVariable("openid")String openid){
+        return foundService.setFoundField(fieldName,value,uid,openid);
+    }
+    /*删除一条记录*/
+    @PostMapping("deleteOneFound/{uid}/{openid}")
+    public Integer postDelFound(@PathVariable("uid") String uid,@PathVariable("openid")String openid){
+        return foundService.delOneFound(uid,openid);
     }
 }

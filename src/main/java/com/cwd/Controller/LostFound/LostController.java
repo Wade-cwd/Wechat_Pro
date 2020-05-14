@@ -6,6 +6,7 @@ import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Lost;
 import com.cwd.Service.LostAndFound.LostService;
 import com.cwd.Utils.FileUtil;
+import com.cwd.Utils.LayUI;
 import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.github.pagehelper.PageInfo;
 import org.mybatis.logging.LoggerFactory;
@@ -18,6 +19,7 @@ import java.io.*;
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 import java.util.List;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 @RestController
@@ -48,14 +50,8 @@ public class LostController {
                               @PathVariable(value = "pageSize")int pageSize){
         PageInfo<Lost> losts=lostService.getLostList(pageNo,pageSize);
         Logger.getGlobal().info("失物招领分页格式:"+losts.toString());
-        JSONObject jsonObject= (JSONObject) JSONObject.toJSON(losts);
-        JSONObject newJsonObj=new JSONObject();
-        newJsonObj.put("code",0);
-        newJsonObj.put("msg","");
-        newJsonObj.put("count",1000);
-        newJsonObj.put("data",jsonObject.get("list"));
-        Logger.getGlobal().info("失物招领json格式:"+losts.toString());
-        return  newJsonObj;
+        Integer count=lostService.getJobCount();
+        return LayUI.getLayUIFormatData(losts,count);
     }
     /*
     * 获取前端数据文件,写入本地数据库
@@ -70,6 +66,7 @@ public class LostController {
         String imgName= fileUtil.writeFileToDirectory(images);
         //数据写入数据库
         lost.setImage(imgName);
+        lost.setUid(UUID.randomUUID().toString());
         Logger.getGlobal().info("图片"+lost.getImage());
         lostService.addLostItem(lost);
     }
@@ -97,6 +94,18 @@ public class LostController {
                 e.printStackTrace();
             }}
 
+    }
+    /*更新字段*/
+    @PostMapping("/updateLostField/{fieldName}/{value}/{uid}/{openid}")
+    public Integer postUpdateField(@PathVariable("fieldName")String fieldName,@PathVariable("value")String value,
+                                   @PathVariable("uid")String uid,@PathVariable("openid")String openid)
+    {
+        return  lostService.setLostField(fieldName,value,uid,openid);
+    }
+    /*删除记录*/
+    @PostMapping("/deleteOneLost/{uid}/{openid}")
+    public Integer postDelOneLost(@PathVariable("uid")String uid,@PathVariable("openid")String openid){
+        return lostService.delOneLost(uid,openid);
     }
 
 }

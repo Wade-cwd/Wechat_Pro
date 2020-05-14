@@ -53,7 +53,22 @@ public interface TopicMapper {
     @Select("select * from topic where openid=#{openid} and uid=#{uid} and isCheck=#{isCheck}")
     @ResultType(Topic.class)
     Topic getTopic(String openid, String uid, int isCheck);
-
+    /*查询所有发布的话题*/
+    @Select("select * from topic where isCheck=1")
+    @ResultType(Topic.class)
+    List<Topic> selectPublicTopics();
+    /*查询所有已发布话题数*/
+    @Select("select count(*) from topic where isCheck=1")
+    @ResultType(Integer.class)
+    Integer selectPublicTopicCount();
+    /*待审核话题*/
+    @Select("select * from topic where isCheck=0")
+    @ResultType(Topic.class)
+    List<Topic> selectAuditingTopics();
+    /*查询待审核话题数量*/
+    @Select("select count(*) from topic where isCheck=0")
+    @ResultType(Integer.class)
+    Integer selectAuditingTopicCount();
     /*热门话题
      * */
     @Select("SELECT * FROM topic where isCheck=1 ORDER BY peopleSize DESC LIMIT 1")
@@ -70,10 +85,18 @@ public interface TopicMapper {
     @Options(useGeneratedKeys = true, keyProperty = "id", keyColumn = "id")
     void addComment(Comment comment);//添加用户评论
 
-    /*查询所有评论*/
+    /*查询用户所有评论*/
     @Select("select * from Comment where targetOpenid=#{openid} and targetUid=#{uid}")
     @ResultType(Comment.class)
     List<Comment> getAllComment(String openid, String uid);
+    /*查询所有评论*/
+    @Select("select * from Comment")
+    @ResultType(Comment.class)
+    List<Comment> getComments();
+    /*查询所有评论数量*/
+    @Select("select count(*) from Comment")
+    @ResultType(Integer.class)
+    Integer selectCommentCount();
 
     /*增加评论人数*/
     @Update("update topic set peopleSize=#{peopleSize} where openid=#{openid} and uid=#{uid}")
@@ -122,4 +145,22 @@ public interface TopicMapper {
     /*设置是否可点赞*/
     @Update("update PlusThumb set isTopicPlusThumb=#{isTopicPlusThumb} where openid=#{openid} and topicOpenid=#{topicOpenid} and topicUid=#{topicUid}")
     void setCanPlusThumb(String isTopicPlusThumb, String openid, String topicOpenid, String topicUid);
+
+    /*更新字段*/
+    @Update("update topic set ${fieldName}=#{value} where uid=#{uid} and openid=#{openid}")
+    @ResultType(Integer.class)
+    Integer updateTopic(String fieldName,String value,String uid,String openid);
+    /*更新评论字段*/
+    @Update("update Comment set ${fieldName}=#{value} where uid=#{uid} and openid=#{openid}")
+    @ResultType(Integer.class)
+    Integer updateComment(String fieldName,Object value,String uid,String openid);
+    /*删除一条话题记录*/
+    @Delete("delete from topic where uid=#{uid} and openid=#{openid}")
+    @ResultType(Integer.class)
+    Integer deleteTopic(String uid,String openid);
+    /*删除一条评论记录*/
+    @Delete("delete from Comment where uid=#{uid} and openid=#{openid}")
+    @ResultType(Integer.class)
+    Integer deleteComment(String uid,String openid);
+
 }

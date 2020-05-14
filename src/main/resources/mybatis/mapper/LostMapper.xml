@@ -11,8 +11,8 @@
                    resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert  into Lost(openid,nickName,avatarUrl,article,feature,lostplace,phone,image,mark,issuedate,lostdate)
-         values(#{openid},#{nickName},#{avatarUrl},#{article},#{feature},#{lostplace},#{phone},#{image},#{mark},#{issuedate},#{lostdate})
+        insert  into Lost(uid,openid,nickName,avatarUrl,article,feature,lostplace,phone,image,mark,issuedate,lostdate)
+         values(#{uid},#{openid},#{nickName},#{avatarUrl},#{article},#{feature},#{lostplace},#{phone},#{image},#{mark},#{issuedate},#{lostdate})
     </insert>
     
 </mapper>

@@ -8,8 +8,8 @@
                    resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert into job(nickName,avatarUrl,openid,workName,companyName,workPlace,workContent,workTime,salary,contact,mark)
-        values(#{nickName},#{avatarUrl},#{openid},#{workName},#{companyName},#{workPlace},#{workContent},#{workTime},#{salary},#{contact},#{mark})
+        insert into job(uid,nickName,avatarUrl,openid,workName,companyName,workPlace,workContent,workTime,salary,contact,mark)
+        values(#{uid},#{nickName},#{avatarUrl},#{openid},#{workName},#{companyName},#{workPlace},#{workContent},#{workTime},#{salary},#{contact},#{mark})
     </insert>
     <select id="getJobList" resultType="com.cwd.Entity.Job">
         select * from job

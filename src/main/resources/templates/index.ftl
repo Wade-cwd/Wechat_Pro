@@ -9,13 +9,11 @@
     <script src="/js/vue.min.js" type="application/javascript"></script>
     <link rel="stylesheet" href="/layui/css/layui.css">
     <link rel="stylesheet" href="/css/index.css">
-    <script src="/layui/layui.all.js"></script>
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header">
         <div class="layui-logo">生活小助手后台管理</div>
-
 
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
@@ -35,9 +33,9 @@
     <div class="layui-side layui-bg-black">
         <div id="left_Nav" class="layui-side-scroll">
             <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
-            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+            <ul class="layui-nav layui-nav-tree"  >
                 <li class="layui-nav-item layui-nav-itemed">
-                    <a class="" href="" id="t">信息管理</a>
+                    <a class="" href="JavaScript:;" >信息管理</a>
                     <dl class="layui-nav-child">
                         <dd id="lostData" ><a href="javascript:void(0)">失物招领</a></dd>
                         <dd id="foundData" ><a href="javascript:void(0)">寻物启事</a></dd>
@@ -48,9 +46,15 @@
                 <li class="layui-nav-item">
                     <a href="javascript:;">话题管理</a>
                     <dl class="layui-nav-child">
-                        <dd><a href="javascript:;">列表一</a></dd>
-                        <dd><a href="javascript:;">列表二</a></dd>
-                        <dd><a href="">超链接</a></dd>
+                        <dd id="auditingTopic"><a href="javascript:void(0);">待审核</a></dd>
+                        <dd id="publicTopics"><a href="javascript:;">已发布</a></dd>
+                        <dd id="commentData"><a href="javascript:;">所有评论</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd id="certData"><a href="javascript:;">实名认证审核</a></dd>
                     </dl>
                 </li>
             </ul>
@@ -59,41 +63,24 @@
 
     <div class="layui-body">
         <!-- 内容主体区域 -->
+
         <div id="table_div"></div>
-<#--        <script type="text/html" id="toolbarDemo">-->
-<#--            <div class="layui-btn-container">-->
-<#--                <button class="layui-btn layui-btn-sm" lay-event="getCheckData">获取选中行数据</button>-->
-<#--                <button class="layui-btn layui-btn-sm" lay-event="getCheckLength">获取选中数目</button>-->
-<#--                <button class="layui-btn layui-btn-sm" lay-event="isAll">验证是否全选</button>-->
-<#--            </div>-->
-<#--        </script>-->
 
-<#--        <script type="text/html" id="barDemo">-->
-<#--            <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
-<#--            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>-->
-<#--        </script>-->
-
-
-
+        <script type="text/html" id="barDemo">
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+        </script>
 
 
     </div>
-
-
-
 
     <div class="layui-footer">
         <!-- 底部固定区域 -->
         © www.chiwenda.xyz - 制作者池文达
     </div>
 </div>
-</body>
-<script src="/js/index.js"></script>
-<script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
 
-    });
-</script>
+
+<script src="/layui/layui.all.js"></script>
+<script src="/js/index.js"></script>
+</body>
 </html>

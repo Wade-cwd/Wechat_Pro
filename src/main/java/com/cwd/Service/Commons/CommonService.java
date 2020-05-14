@@ -11,10 +11,14 @@ import com.cwd.Utils.AliTool;
 import com.cwd.Utils.FileUtil;
 import com.cwd.Utils.HttpRequest.HttpRequest;
 import com.cwd.Utils.KdniaoTrackQueryAPI;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.UUID;
 import java.util.logging.Logger;
 
 @Service
@@ -96,10 +100,11 @@ public class CommonService {
        //写入数据库
         IdCard idCard= JSONObject.parseObject(jsonObject.getString("data"),IdCard.class);
         idCard.setOpenid(certification.getOpenid());//添加对应openid
+        idCard.setUid(UUID.randomUUID().toString());
         GlobalConfig.getLog(this.getClass()).info("转为实体成功:"+idCard.toString());
         commonMapper.addIdCardInfo(idCard);
-        //设置为未审核
-        certification.setIsCheck(0);
+        //设置为审核中
+        certification.setIsCheck(2);
         commonMapper.addOneCheck(certification);//执行上传
         //重置图片
         this.certification.setImages("");
@@ -108,10 +113,11 @@ public class CommonService {
     public int getCheckStatus(String openid){
         Integer status= commonMapper.getByOpenid(openid);
         GlobalConfig.getLog(this.getClass()).info("状态:"+status);
+
         if(status!=null){
-            if(status==0&&isSubmitCheck(openid)=="OK"){
+            if(status==2&&isSubmitCheck(openid)=="OK"){
                 //审核中
-                return 0;
+                return 2;
             }else if(status==-1&&isSubmitCheck(openid)=="OK"){
                 //审核未通过
                 return -1;
@@ -119,9 +125,14 @@ public class CommonService {
                 //审核通过
                 return 1;
             }
+            else{
+                //未提交
+                return 0;
+            }
+        }else {
+            return 0;
         }
-        //未提交审核
-        return 2;
+
     }
     //是否提交过实名认证审核申请
     private String isSubmitCheck(String openid){
@@ -132,5 +143,21 @@ public class CommonService {
             }
         }
         return "NO";
+    }
+    //获取实名认证列表
+    public PageInfo<Certification> getCertList(int pageNo,int pageSize){
+        PageHelper.startPage(pageNo,pageSize);//分页
+        List<Certification> certifications=commonMapper.selectCerts();
+        PageInfo<Certification> pageInfo=new PageInfo<>(certifications);
+        return  pageInfo;
+    }
+    //获取实名认证列表数据条数
+    public Integer getCertCount(){
+        Integer count=commonMapper.selectCertCount();
+        if(count!=null&&count>0){
+            return count;
+        }else {
+            return 0;
+        }
     }
 }

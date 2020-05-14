@@ -51,4 +51,31 @@ public class MarketService {
         PageInfo<Market> pageInfo=new PageInfo<>(markets);
         return pageInfo;
     }
+    /*设置字段值*/
+    public Integer setMarketField(String fieldName,String value,String uid,String openid){
+        Integer resultCount=marketMapper.updateMarket(fieldName,value,uid,openid);
+        if(resultCount!=null&&resultCount>0){
+            return resultCount;
+        }else{
+            return -1;
+        }
+    }
+    /*删除一条记录*/
+    public Integer delOneMarket(String uid,String openid){
+        Integer delResult=marketMapper.deleteMarket(uid,openid);
+        if(delResult!=null&&delResult>0){
+            return delResult;
+        }else {
+            return -1;
+        }
+    }
+    /*获取所有记录数量*/
+    public Integer getMarketCount(){
+        Integer count=marketMapper.selectMarketCount();
+        if(count!=null&&count>0){
+            return count;
+        }else {
+            return 0;
+        }
+    }
 }

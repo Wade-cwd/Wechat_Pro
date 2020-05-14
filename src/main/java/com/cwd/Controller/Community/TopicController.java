@@ -7,6 +7,7 @@ import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Topic;
 import com.cwd.Service.Community.TopicService;
 import com.cwd.Utils.FileUtil;
+import com.cwd.Utils.LayUI;
 import com.github.pagehelper.PageInfo;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -68,6 +69,22 @@ public class TopicController {
 
         return list;
     }
+    /*获取待审核话题,返回layui支持的json格式
+    *后台
+    * */
+    @PostMapping("/getAuditingTopics/{pageNo}/{pageSize}")
+    public Object getAuditingTopics(@PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize){
+        PageInfo<Topic> auditingTopics=topicService.getAuditingTopics(pageNo,pageSize);
+        Integer count=topicService.getAuditingTopicsCount();
+        return LayUI.getLayUIFormatData(auditingTopics,count);
+    }
+    /*全部已发布话题，Layui的json支持格式*/
+    @PostMapping("/getPublicTopics/{pageNo}/{pageSize}")
+    public Object getPublicTopics(@PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize){
+        PageInfo<Topic> publicTopics=topicService.getPublicTopics(pageNo,pageSize);
+        Integer count=topicService.getPublicTopicsCount();
+        return LayUI.getLayUIFormatData(publicTopics,count);
+    }
 
     /*获取最热门话题
      * */
@@ -92,15 +109,28 @@ public class TopicController {
     /*添加评论*/
     @PostMapping("/addUserComment")
     public void addUserComment(@RequestBody Comment comment) {
+        comment.setUid(UUID.randomUUID().toString());
         GlobalConfig.getLog(this.getClass()).info("开始添加评论:" + comment.toString());
         topicService.addUserComment(comment);
     }
 
-    /*获取所有评论*/
+    /*获取用户所有评论*/
     @GetMapping("/getAllComments/{openid}/{uid}/{pageNo}/{pageSize}")
     public PageInfo<Comment> getAllComments(@PathVariable("openid") String openid, @PathVariable("uid") String uid,
                                             @PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize) {
         return topicService.getAllComments(openid, uid, pageNo, pageSize);
+    }
+    /*获取所有评论,LayUI格式*/
+    @PostMapping("/getComments/{pageNo}/{pageSize}")
+    public Object getComments(@PathVariable("pageNo")int pageNo,@PathVariable("pageSize")int pageSize){
+        PageInfo<Comment> conment=topicService.getComments(pageNo,pageSize);
+        Integer count =topicService.getCommentCount();
+        return LayUI.getLayUIFormatData(conment,count);
+    }
+    /*删除一条评论*/
+    @PostMapping("/deleteOneComment/{uid}/{openid}")
+    public Integer deleteOneComment(@PathVariable("uid") String uid,@PathVariable("openid") String openid){
+        return topicService.delOneComment(uid,openid);
     }
 
 
@@ -181,4 +211,23 @@ public class TopicController {
             }
         }
     }
+
+    /*更新话题字段内容*/
+    @PostMapping("/updateField/{fieldName}/{value}/{uid}/{openid}")
+    public Integer postUpdateField(@PathVariable("fieldName") String fieldName,@PathVariable("value")String value,
+                                   @PathVariable("uid") String uid,@PathVariable("openid")String openid){
+        return topicService.setTopicField(fieldName,value,uid,openid);
+    }
+    /*更新评论字段内容*/
+    @PostMapping("/updateCommentField/{fieldName}/{value}/{uid}/{openid}")
+    public Integer postUpdateCOmmentField(@PathVariable("fieldName") String fieldName,@PathVariable("value")Object value,
+                                   @PathVariable("uid") String uid,@PathVariable("openid")String openid){
+        return topicService.setCommentField(fieldName,value,uid,openid);
+    }
+    /*删除一条话题*/
+    @PostMapping("/deleteOneTopic/{uid}/{openid}")
+    public Integer postDeleteTopic(@PathVariable("uid")String uid,@PathVariable("openid")String openid){
+        return topicService.delOneTopic(uid,openid);
+    }
+
 }

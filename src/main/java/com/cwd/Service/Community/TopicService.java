@@ -4,6 +4,7 @@ import com.cwd.Entity.*;
 import com.cwd.Mapper.TopicMapper;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import net.sf.jsqlparser.statement.select.Top;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.logging.Logger;
 
 @Service
 public class TopicService {
@@ -95,6 +97,39 @@ public class TopicService {
         PageInfo<Topic> pageInfo = new PageInfo<>(topicList);
         return pageInfo;
     }
+    /*获取已发布的全部话题*/
+    public PageInfo<Topic> getPublicTopics(int pageNo, int pageSize){
+        PageHelper.startPage(pageNo, pageSize);
+        List<Topic> publicTopics=topicMapper.selectPublicTopics();
+        PageInfo<Topic> publicTopicsPageInfo=new PageInfo<>(publicTopics);
+        return publicTopicsPageInfo;
+    }
+    /*获取已发布话题数量*/
+    public Integer getPublicTopicsCount(){
+        Integer count=topicMapper.selectPublicTopicCount();
+        if(count!=null&&count>0){
+            return count;
+        }else{
+            return 0;
+        }
+    }
+
+    /*获取待审核话题*/
+    public PageInfo<Topic> getAuditingTopics(int pageNo, int pageSize){
+        PageHelper.startPage(pageNo, pageSize);
+        List<Topic> auditingTopics=topicMapper.selectAuditingTopics();
+        PageInfo<Topic> pageInfoTopics=new PageInfo<>(auditingTopics);
+        return pageInfoTopics;
+    }
+    /*获取待审核话题数量*/
+    public Integer getAuditingTopicsCount(){
+        Integer count=topicMapper.selectAuditingTopicCount();
+        if(count!=null&&count>0){
+            return count;
+        }else{
+            return 0;
+        }
+    }
 
     /*获取参加人数最多的话题
      * */
@@ -118,18 +153,46 @@ public class TopicService {
         return topicPageInfo;
     }
 
+
     /*添加评论*/
     public void addUserComment(Comment comment) {
         topicMapper.addComment(comment);
     }
 
-    /*查询所有评论*/
+    /*查询用户所有评论*/
 //    @Cacheable
     public PageInfo<Comment> getAllComments(String openid, String uid, int pageNo, int pagSize) {
         PageHelper.startPage(pageNo, pagSize);
         List<Comment> comments = topicMapper.getAllComment(openid, uid);
         PageInfo<Comment> commentPageInfo = new PageInfo<>(comments);
         return commentPageInfo;
+    }
+    /*查询所有评论*/
+    public  PageInfo<Comment> getComments(int pageNo, int pagSize){
+        PageHelper.startPage(pageNo, pagSize);
+        List<Comment> comments=topicMapper.getComments();
+        PageInfo<Comment> commentPageInfo = new PageInfo<>(comments);
+        return commentPageInfo;
+    }
+    /*删除一条评论*/
+    public Integer delOneComment(String uid,String openid){
+        Integer resultCount=topicMapper.deleteComment(uid,openid);
+        if(resultCount!=null&&resultCount>0){
+            Logger.getGlobal().info("Admin:删除评论成功成功");
+            return resultCount;
+        }else {
+            Logger.getGlobal().info("Admin:删除评论失败请检查");
+            return -1;
+        }
+    }
+    /*返回所有评论数量*/
+    public Integer getCommentCount(){
+        Integer count=topicMapper.selectCommentCount();
+        if(count!=null&&count>0){
+            return count;
+        }else{
+            return 0;
+        }
     }
 
     /*添加评论人数*/
@@ -209,6 +272,38 @@ public class TopicService {
         }
         GlobalConfig.getLog(this.getClass()).info("不可点赞");
         return false;
+    }
+    /*动态更新话题字段内容*/
+    public Integer setTopicField(String fieldName,String value,String uid,String openid){
+        Logger.getGlobal().info("更新字段......");
+        Integer resultCount= topicMapper.updateTopic(fieldName,value,uid,openid);
+        if(resultCount!=null&&resultCount>0){
+            Logger.getGlobal().info("更新成功:，更新行数:"+resultCount);
+            return resultCount;
+        }else{
+            Logger.getGlobal().info("更新失败");
+            return -1;
+        }
+    }
+    /*动态更新评论字段内容*/
+    public  Integer  setCommentField(String fieldName,Object value,String uid,String openid){
+        Integer resultCount= topicMapper.updateComment(fieldName,value,uid,openid);
+        if(resultCount!=null&&resultCount>0){
+            Logger.getGlobal().info("更新成功:，更新行数:"+resultCount);
+            return resultCount;
+        }else{
+            Logger.getGlobal().info("更新失败");
+            return -1;
+        }
+    }
+    /*删除话题*/
+    public Integer delOneTopic(String uid,String openid){
+        Integer delResult=topicMapper.deleteTopic(uid,openid);
+        if(delResult!=null&&delResult>0){
+            return delResult;
+        }else{
+            return -1;
+        }
     }
 
 

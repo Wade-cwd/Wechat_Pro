@@ -6,10 +6,13 @@ import com.cwd.Entity.GlobalConfig;
 import com.cwd.Entity.Job;
 import com.cwd.Entity.Lost;
 import com.cwd.Service.Job.JobService;
+import com.cwd.Utils.LayUI;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/job")
@@ -22,6 +25,7 @@ public class JobController {
     * */
     @PostMapping("/addJob")
     public void addJob(@RequestBody Job job){
+        job.setUid(UUID.randomUUID().toString());
         GlobalConfig.getLog(this.getClass()).info(job.toString());
         jobService.addOneJobRecord(job);
         GlobalConfig.getLog(this.getClass()).info("添加成功");
@@ -41,14 +45,19 @@ public class JobController {
     public Object getJobListJson(@PathVariable(value = "pageNo")int pageNo,
                              @PathVariable(value = "pageSize")int pageSize){
         PageInfo<Job> jobs=jobService.getJobList(pageNo,pageSize);
-        Object objectData=  JSONObject.toJSON(jobs);
-        JSONObject jsonObject= (JSONObject) objectData;
-        JSONObject newJsonObj=new JSONObject();
-        newJsonObj.put("code",0);
-        newJsonObj.put("msg","");
-        newJsonObj.put("count",1000);
-        newJsonObj.put("data",jsonObject.get("list"));
-        return  newJsonObj;
+        Integer count=jobService.getJobCount();
+        return LayUI.getLayUIFormatData(jobs,count);
+    }
+    /*更新字段*/
+    @PostMapping("/updateJobField/{fieldName}/{value}/{uid}/{openid}")
+    public Integer postJobField(@PathVariable("fieldName")String fieldName,@PathVariable("value")String value,
+            @PathVariable("uid")String uid,@PathVariable("openid") String openid){
+            return jobService.setJobField(fieldName,value,uid,openid);
+    }
+    /*删除记录*/
+    @PostMapping("/deleteOnJob/{uid}/{openid}")
+    public  Integer postDelOneFound(@PathVariable("uid")String uid,@PathVariable("openid")String openid){
+        return jobService.delOneFound(uid,openid);
     }
 
 }

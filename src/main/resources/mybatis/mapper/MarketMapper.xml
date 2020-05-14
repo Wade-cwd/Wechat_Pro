@@ -8,8 +8,8 @@
                    resultType="java.lang.Integer">
             SELECT LAST_INSERT_ID()
         </selectKey>
-        insert  into market(nickName,avatarUrl,openid,article,price,feature,mark,contact,images)
-        values(#{nickName},#{avatarUrl},#{openid},#{article},#{price},#{feature},#{mark},#{contact},#{images})
+        insert  into market(uid,nickName,avatarUrl,openid,article,price,feature,mark,contact,images)
+        values(#{uid},#{nickName},#{avatarUrl},#{openid},#{article},#{price},#{feature},#{mark},#{contact},#{images})
     </insert>
     <select id="getMarketList" resultType="com.cwd.Entity.Market">
         select * from market

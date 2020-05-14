@@ -61,5 +61,31 @@ public class LostService {
         }
         return lost;
     }
-
+    /*设置字段值*/
+    public Integer setLostField(String fieldName,String value,String uid,String openid){
+        Integer resultCount=lostMapper.updateLost(fieldName,value,uid,openid);
+        if(resultCount!=null&&resultCount>0){
+            return resultCount;
+        }else{
+            return -1;
+        }
+    }
+    /*删除一条记录*/
+    public Integer delOneLost(String uid,String openid){
+        Integer resultCount=lostMapper.deleteLost(uid,openid);
+        if(resultCount!=null&&resultCount>0){
+            return resultCount;
+        }else{
+            return  -1;
+        }
+    }
+    /*获取所有记录数量*/
+    public Integer getJobCount(){
+        Integer count=lostMapper.selectLostCount();
+        if(count!=null&&count>0){
+            return count;
+        }else {
+            return 0;
+        }
+    }
 }

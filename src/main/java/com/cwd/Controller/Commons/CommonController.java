@@ -5,11 +5,15 @@ import com.cwd.Entity.GlobalConfig;
 import com.cwd.Service.Commons.CommonService;
 import com.cwd.Utils.AliTool;
 import com.cwd.Utils.FileUtil;
+import com.cwd.Utils.LayUI;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/common")
@@ -50,7 +54,7 @@ public class CommonController {
     //身份证信息验证申请数据
     @PostMapping(value = "/check")
     public void checkCert(@RequestBody Certification certification){
-
+        certification.setUid(UUID.randomUUID().toString());
         GlobalConfig.getLog(this.getClass()).info("certification:"+certification.toString());
         commonService.addOneCheck(certification);
         GlobalConfig.getLog(this.getClass()).info("上传表单数据成功.....");
@@ -64,5 +68,12 @@ public class CommonController {
     @PostMapping("/checkStatus/{openid}")
     public int checkStatus(@PathVariable("openid") String openid){
         return commonService.getCheckStatus(openid);
+    }
+    /*身份认证数据*/
+    @PostMapping("/getCerts/{pageNo}/{pageSize}")
+    public Object getCertList(@PathVariable("pageNo")int pageNo,@PathVariable("pageSize")int pageSize){
+        PageInfo<Certification> pageInfo =commonService.getCertList(pageNo,pageSize);
+        Integer count=commonService.getCertCount();
+        return LayUI.getLayUIFormatData(pageInfo,count);
     }
 }
